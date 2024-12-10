@@ -78,6 +78,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     margin-left: 20px;
+    vertical-align: middle;
 }
 
 .image-container img {
