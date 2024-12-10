@@ -9,22 +9,14 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
-    display: flex;
-    justify-content: center; /* Centrer le contenu horizontalement */
-    align-items: center; /* Centrer le contenu verticalement */
-    height: 100vh; /* Remplir la hauteur de la fenêtre */
-    margin: 0;
-    flex-direction: column; /* Pour aligner le header, le contenu, et le footer */
+    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Couleur de fond générale */
 }
 
 /* Barre d'accueil */
 header {
-    background-color: #4aac71;
-    color: #fff;
+    background-color: #4aac71; /* Couleur de fond de la barre d'accueil */
+    color: #fff; /* Couleur du texte */
     padding: 10px 0;
-    width: 100%; /* Pour couvrir toute la largeur */
-    text-align: center;
 }
 
 .container {
@@ -32,9 +24,8 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 20px auto; /* Centrer la boîte contenant les boutons et l'image */
+    margin: 0 auto;
     padding: 0 20px;
-    flex-direction: column;
 }
 
 .logo {
@@ -43,22 +34,20 @@ header {
 }
 
 .logo .dades {
-    color: #007bff;
+    color: #007bff; /* Bleu pour 'Med' */
 }
 
 .logo .school {
-    color: #ffffff;
+    color: #ffffff; /* Blanc pour 'Dades' */
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    flex-direction: column; /* Liste verticale */
-    align-items: center;
 }
 
 nav ul li {
-    margin: 10px 0; /* Espace vertical entre les éléments */
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -74,21 +63,26 @@ nav ul li a:hover {
 /* Section principale */
 .content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     margin: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
 }
 
 .image-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    margin-left: 20px;
+    vertical-align: middle;
 }
 
 .image-container img {
-    max-width: 300px;
+    max-width: 300px; /* Ajuste la largeur maximum de l'image */
     height: auto;
 }
 
@@ -97,13 +91,13 @@ nav ul li a:hover {
 }
 
 .image-container a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+    color: #007bff; /* Couleur du lien */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    font-weight: bold; /* Met le texte en gras */
 }
 
 .image-container a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Ajoute un soulignement au survol */
 }
 
 /* Footer */
@@ -112,13 +106,15 @@ footer {
     color: #fff;
     text-align: center;
     padding: 25px 0;
-    width: 100%; /* Pour couvrir toute la largeur */
+    position: fixed;
+    bottom: 1px;
+    width: 100%;
 }
 
 /* Boutons */
 button {
-    padding: 15px 20px;
-    margin: 10px auto;
+    padding: 15px 340px;
+    margin: 10px;
     font-size: 18px;
     border: none;
     background-color: #F44336;
@@ -126,37 +122,43 @@ button {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    width: 90%;
-    max-width: 300px;
 }
-
-h1, p {
+h1 {
     text-align: center;
 }
+p {
+    text-align: center;
+}
+/* أنماط عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-/* Annotations pour les petits appareils */
+/* أنماط للأجهزة الصغيرة (شاشات الهواتف) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* تغيير ترتيب العناصر */
         text-align: center;
     }
 
     nav ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* القائمة تصبح عمودية */
     }
 
     table {
-        width: 100%;
+        width: 100%; /* جعل الجدول يملأ الشاشة */
     }
 
     th, td {
-        font-size: 14px;
+        font-size: 14px; /* تصغير النص في الجدول */
         padding: 5px;
     }
 
     .button-container button {
-        width: 100%;
+        width: 100%; /* الأزرار تأخذ العرض الكامل */
         margin-bottom: 10px;
     }
 }
