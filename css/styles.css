@@ -82,15 +82,17 @@ nav ul li a:hover {
 }
 
 button {
-    padding: 15px 50px;
-    margin: 10px;
+    padding: 15px 20px; /* تقليل الحواف الأفقية */
+    margin: 10px auto; /* يجعل الزر مركزيًا */
     font-size: 18px;
     border: none;
-    background-color: #000;
+    background-color: #F44336;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
+    width: 90%; /* يجعل عرض الزر نسبة مئوية من الشاشة */
+    max-width: 300px; /* يحدد عرضًا أقصى للزر */
 }
 
 button:hover {
