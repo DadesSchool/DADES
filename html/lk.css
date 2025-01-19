@@ -64,7 +64,7 @@ nav ul li a:hover {
 .content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center; /* Aligning image and buttons side by side */
     margin: 20px 0;
 }
 
@@ -78,12 +78,12 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     margin-left: 20px;
-    vertical-align: middle;
 }
 
 .image-container img {
-    max-width: 300px; /* Ajuste la largeur maximum de l'image */
+    max-width: 200px; /* Ajuste la largeur maximum de l'image */
     height: auto;
+    margin-left: 20px; /* Adding some space between the image and buttons */
 }
 
 .image-container p {
@@ -113,9 +113,9 @@ footer {
 
 /* Boutons */
 button {
-    padding: 8px 16px; /* تقليص المسافة داخل الزر */
+    padding: 12px 24px; /* Légèrement agrandi pour أن يكون أكبر قليلاً */
     margin: 8px;
-    font-size: 12px; /* تقليل حجم الخط */
+    font-size: 16px; /* تكبير حجم الخط قليلاً */
     border: none;
     background-color: #F44336;
     color: white;
@@ -166,7 +166,7 @@ body {
     }
 
     button {
-        padding: 6px 12px; /* تقليص المسافة داخل الزر على الأجهزة الصغيرة */
-        font-size: 12px; /* تقليل حجم الخط */
+        padding: 10px 20px; /* زيادة الحجم قليلاً */
+        font-size: 14px; /* تكبير حجم الخط على الأجهزة الصغيرة */
     }
 }
