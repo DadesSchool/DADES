@@ -9,14 +9,17 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Couleur de fond générale */
+    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
+    background-size: cover; /* Pour que l'image de fond couvre toute la page */
+    background-position: center; /* Centrer l'image */
 }
 
 /* Barre d'accueil */
 header {
     background-color: #4aac71; /* Couleur de fond de la barre d'accueil */
-    color: #fff; /* Couleur du texte */
-    padding: 10px 0;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
 }
 
 .container {
@@ -29,7 +32,7 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -44,6 +47,7 @@ header {
 nav ul {
     list-style-type: none;
     display: flex;
+    justify-content: center;
 }
 
 nav ul li {
@@ -63,26 +67,47 @@ nav ul li a:hover {
 /* Section principale */
 .content {
     display: flex;
-    justify-content: flex-start;
-    align-items: center; /* Aligning image and buttons side by side */
-    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Pour rendre la mise en page responsive */
+    margin: 30px 0;
+    gap: 20px; /* Ajout d'espace entre les éléments */
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Add space between buttons and image */
+    gap: 10px; /* Espace entre les boutons */
+    align-items: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #F44336;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d32f2f; /* Couleur de fond lors du survol */
 }
 
 .image-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .image-container img {
-    max-width: 250px; /* Adjust image size */
+    max-width: 300px;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image-container p {
@@ -90,13 +115,13 @@ nav ul li a:hover {
 }
 
 .image-container a {
-    color: #007bff; /* Couleur du lien */
-    text-decoration: none; /* Supprime le soulignement par défaut */
-    font-weight: bold; /* Met le texte en gras */
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .image-container a:hover {
-    text-decoration: underline; /* Ajoute un soulignement au survol */
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -106,66 +131,29 @@ footer {
     text-align: center;
     padding: 25px 0;
     position: fixed;
-    bottom: 1px;
+    bottom: 0;
     width: 100%;
-}
-
-/* Boutons */
-button {
-    padding: 12px 24px; /* Augmenté légèrement */
-    margin: 8px;
-    font-size: 16px; /* Augmenté légèrement */
-    border: none;
-    background-color: #F44336;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
-
-/* Anmaṭj ʿāmma */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 /* Anmaṭj li ajhiza ṣaghīra (shašāt al-hawātif) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Changing order of elements */
+    .content {
+        flex-direction: column;
         text-align: center;
     }
 
-    nav ul {
-        display: flex;
-        flex-direction: column; /* Menu becomes vertical */
-    }
-
-    table {
-        width: 100%; /* Making the table fill the screen */
-    }
-
-    th, td {
-        font-size: 14px; /* Smaller text in the table */
-        padding: 5px;
-    }
-
-    .button-container button {
-        width: 100%; /* Buttons take full width */
-        margin-bottom: 10px;
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
     }
 
     button {
-        padding: 10px 20px; /* Slightly larger buttons on small screens */
-        font-size: 14px; /* Slightly larger text */
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .image-container img {
+        max-width: 250px; /* Réduire la taille de l'image sur les petits écrans */
     }
 }
