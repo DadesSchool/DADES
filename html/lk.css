@@ -1,3 +1,4 @@
+/* Réinitialisation des marges et des paddings pour tous les éléments */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
     background-size: cover; /* Pour que l'image de fond couvre toute la page */
     background-position: center; /* Centrer l'image */
+    padding: 20px;
 }
 
 /* Barre d'accueil */
@@ -68,15 +70,15 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Pour rendre la mise en page responsive */
-    margin: 30px 0;
     gap: 20px; /* Ajout d'espace entre les éléments */
+    margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espace entre les boutons */
+    gap: 15px; /* Espace entre les boutons */
     align-items: center;
 }
 
@@ -156,3 +158,4 @@ footer {
         max-width: 250px; /* Réduire la taille de l'image sur les petits écrans */
     }
 }
+
