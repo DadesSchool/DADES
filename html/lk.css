@@ -113,9 +113,9 @@ footer {
 
 /* Boutons */
 button {
-    padding: 15px 340px;
+    padding: 10px 20px; /* تقليص المسافة داخل الزر */
     margin: 10px;
-    font-size: 18px;
+    font-size: 14px; /* تقليل حجم الخط */
     border: none;
     background-color: #F44336;
     color: white;
@@ -123,6 +123,7 @@ button {
     border-radius: 5px;
     text-align: center;
 }
+
 h1 {
     text-align: center;
 }
