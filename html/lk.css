@@ -113,9 +113,9 @@ footer {
 
 /* Boutons */
 button {
-    padding: 10px 20px; /* تقليص المسافة داخل الزر */
-    margin: 10px;
-    font-size: 14px; /* تقليل حجم الخط */
+    padding: 8px 16px; /* تقليص المسافة داخل الزر */
+    margin: 8px;
+    font-size: 12px; /* تقليل حجم الخط */
     border: none;
     background-color: #F44336;
     color: white;
@@ -127,9 +127,11 @@ button {
 h1 {
     text-align: center;
 }
+
 p {
     text-align: center;
 }
+
 /* أنماط عامة */
 body {
     font-family: Arial, sans-serif;
@@ -161,5 +163,10 @@ body {
     .button-container button {
         width: 100%; /* الأزرار تأخذ العرض الكامل */
         margin-bottom: 10px;
+    }
+
+    button {
+        padding: 6px 12px; /* تقليص المسافة داخل الزر على الأجهزة الصغيرة */
+        font-size: 12px; /* تقليل حجم الخط */
     }
 }
