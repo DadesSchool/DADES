@@ -65,7 +65,6 @@ nav ul li a:hover {
 /* Section principale avec boutons et vidéo */
 .media-section {
     display: flex;
-    flex-direction: row; /* Alignement horizontal */
     justify-content: space-between; /* Espacement égal entre les boutons et la vidéo */
     align-items: center;
     margin: 20px 0;
@@ -78,16 +77,15 @@ nav ul li a:hover {
 .buttons {
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Ajoutez une marge à droite des boutons pour les éloigner un peu de la vidéo */
 }
 
 .video-container {
-    margin-left: 20px; /* Réduisez ou ajustez cette marge pour rapprocher la vidéo des boutons */
+    margin-left: 0; /* Pousse la vidéo vers la gauche */
 }
 
 button {
     padding: 15px 20px; /* Espacement intérieur des boutons */
-    margin: 10px auto; /* Centre les boutons */
+    margin: 10px auto; /* Center les boutons */
     font-size: 18px;
     border: none;
     background-color: #F44336;
@@ -115,6 +113,16 @@ footer h4, footer p {
     margin: 5px 0;
 }
 
+/* Section principale avec image d'arrière-plan */
+.main-section {
+    background-image: url("po.jpg"); /* Image d'arrière-plan */
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    text-align: center;
+    padding: 100px 0;
+}
+
 /* Pour les appareils mobiles */
 @media (max-width: 768px) {
     header {
@@ -140,4 +148,4 @@ footer h4, footer p {
         width: 100%; /* Boutons prennent toute la largeur sur mobile */
         margin-bottom: 10px;
     }
-}
+} je veux que le vedio soit au driot in peu pre des bouton
