@@ -9,7 +9,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");; /* Couleur de fond générale */
+    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Image d'arrière-plan */
+    background-size: cover;
+    background-position: center;
 }
 
 /* Barre d'accueil */
@@ -63,11 +65,11 @@ nav ul li a:hover {
 /* Section principale avec boutons et vidéo */
 .media-section {
     display: flex;
-    justify-content: space-around; /* Alignement des boutons et vidéo */
+    justify-content: space-between; /* Espacement égal entre les boutons et la vidéo */
     align-items: center;
     margin: 20px 0;
     padding: 20px;
-    background-color: #77b5de; /* Fond blanc pour section des médias */
+    background-color: #77b5de; /* Fond pour la section des médias */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -78,12 +80,12 @@ nav ul li a:hover {
 }
 
 .video-container {
-    margin-left: 20px;
+    margin-left: 0; /* Pousse la vidéo vers la gauche */
 }
 
 button {
-    padding: 15px 20px; /* تقليل الحواف الأفقية */
-    margin: 10px auto; /* يجعل الزر مركزيًا */
+    padding: 15px 20px; /* Espacement intérieur des boutons */
+    margin: 10px auto; /* Center les boutons */
     font-size: 18px;
     border: none;
     background-color: #F44336;
@@ -91,8 +93,8 @@ button {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    width: 90%; /* يجعل عرض الزر نسبة مئوية من الشاشة */
-    max-width: 300px; /* يحدد عرضًا أقصى للزر */
+    width: 90%; /* Largeur relative */
+    max-width: 300px; /* Largeur maximale pour les boutons */
 }
 
 button:hover {
@@ -110,45 +112,40 @@ footer {
 footer h4, footer p {
     margin: 5px 0;
 }
+
 /* Section principale avec image d'arrière-plan */
 .main-section {
-    background-image: url("po.jpg");; /* Chemin relatif vers votre image d'arrière-plan */
+    background-image: url("po.jpg"); /* Image d'arrière-plan */
     background-size: cover;
     background-position: center;
-    color:transparent ;
+    color: transparent;
     text-align: center;
     padding: 100px 0;
 }
-/* أنماط عامة */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
-/* أنماط للأجهزة الصغيرة (شاشات الهواتف) */
+/* Pour les appareils mobiles */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* تغيير ترتيب العناصر */
+        flex-direction: column; /* Disposition verticale pour les petites écrans */
         text-align: center;
     }
 
     nav ul {
         display: flex;
-        flex-direction: column; /* القائمة تصبح عمودية */
+        flex-direction: column; /* Liste verticale */
     }
 
     table {
-        width: 100%; /* جعل الجدول يملأ الشاشة */
+        width: 100%;
     }
 
     th, td {
-        font-size: 14px; /* تصغير النص في الجدول */
+        font-size: 14px;
         padding: 5px;
     }
 
     .button-container button {
-        width: 100%; /* الأزرار تأخذ العرض الكامل */
+        width: 100%; /* Boutons prennent toute la largeur sur mobile */
         margin-bottom: 10px;
     }
 }
