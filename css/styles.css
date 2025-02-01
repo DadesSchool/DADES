@@ -65,6 +65,7 @@ nav ul li a:hover {
 /* Section principale avec boutons et vidéo */
 .media-section {
     display: flex;
+    flex-direction: row; /* Alignement horizontal */
     justify-content: space-between; /* Espacement égal entre les boutons et la vidéo */
     align-items: center;
     margin: 20px 0;
@@ -77,15 +78,16 @@ nav ul li a:hover {
 .buttons {
     display: flex;
     flex-direction: column;
+    margin-right: 20px; /* Ajoutez une marge à droite des boutons pour les éloigner un peu de la vidéo */
 }
 
 .video-container {
-    margin-left: 0; /* Pousse la vidéo vers la gauche */
+    margin-left: 20px; /* Réduisez ou ajustez cette marge pour rapprocher la vidéo des boutons */
 }
 
 button {
     padding: 15px 20px; /* Espacement intérieur des boutons */
-    margin: 10px auto; /* Center les boutons */
+    margin: 10px auto; /* Centre les boutons */
     font-size: 18px;
     border: none;
     background-color: #F44336;
@@ -111,16 +113,6 @@ footer {
 
 footer h4, footer p {
     margin: 5px 0;
-}
-
-/* Section principale avec image d'arrière-plan */
-.main-section {
-    background-image: url("po.jpg"); /* Image d'arrière-plan */
-    background-size: cover;
-    background-position: center;
-    color: transparent;
-    text-align: center;
-    padding: 100px 0;
 }
 
 /* Pour les appareils mobiles */
