@@ -17,7 +17,7 @@ body {
 /* Barre d'accueil */
 header {
     background-color: #4aac71; /* Couleur de fond de la barre d'accueil */
-    color: #fff; /* Couleur du texte */
+    color: #fff;
     padding: 10px 0;
 }
 
@@ -36,11 +36,11 @@ header {
 }
 
 .logo .dades {
-    color: #007bff; /* Bleu pour 'Med' */
+    color: #007bff;
 }
 
 .logo .academy {
-    color: #ffffff; /* Blanc pour 'Dades' */
+    color: #ffffff;
 }
 
 nav ul {
@@ -65,27 +65,43 @@ nav ul li a:hover {
 /* Section principale avec boutons et vidéo */
 .media-section {
     display: flex;
-    justify-content: space-between; /* Espacement égal entre les boutons et la vidéo */
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     margin: 20px 0;
     padding: 20px;
     background-color: #77b5de; /* Fond pour la section des médias */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
 }
 
 .buttons {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .video-container {
-    margin-left: 0; /* Pousse la vidéo vers la gauche */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button {
-    padding: 15px 20px; /* Espacement intérieur des boutons */
-    margin: 10px auto; /* Center les boutons */
+    padding: 15px 20px;
+    margin: 10px auto;
     font-size: 18px;
     border: none;
     background-color: #F44336;
@@ -93,8 +109,8 @@ button {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    width: 90%; /* Largeur relative */
-    max-width: 300px; /* Largeur maximale pour les boutons */
+    width: 90%;
+    max-width: 300px;
 }
 
 button:hover {
@@ -115,7 +131,7 @@ footer h4, footer p {
 
 /* Section principale avec image d'arrière-plan */
 .main-section {
-    background-image: url("po.jpg"); /* Image d'arrière-plan */
+    background-image: url("po.jpg");
     background-size: cover;
     background-position: center;
     color: transparent;
@@ -125,27 +141,11 @@ footer h4, footer p {
 
 /* Pour les appareils mobiles */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Disposition verticale pour les petites écrans */
-        text-align: center;
+    .media-section {
+        flex-direction: column;
     }
 
-    nav ul {
-        display: flex;
-        flex-direction: column; /* Liste verticale */
+    .video-container {
+        max-width: 100%;
     }
-
-    table {
-        width: 100%;
-    }
-
-    th, td {
-        font-size: 14px;
-        padding: 5px;
-    }
-
-    .button-container button {
-        width: 100%; /* Boutons prennent toute la largeur sur mobile */
-        margin-bottom: 10px;
-    }
-} je veux que le vedio soit au driot in peu pre des bouton
+}
