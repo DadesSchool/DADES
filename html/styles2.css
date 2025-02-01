@@ -174,11 +174,11 @@ body {
 
     /* Changer la couleur du texte "Semestre 1", "Semestre 2" et "N.B" */
     button p, .button-container p, .main-section p {
-        color: #FF0000; /* Couleur rouge vif */
+        color: #8B0000; /* Couleur rouge vif */
     }
 
     /* Optionnel : changer la couleur du texte "N.B" si nécessaire */
     footer p {
-        color: #FF0000; /* Changer la couleur du texte dans le footer */
+        color: #8B0000; /* Changer la couleur du texte dans le footer */
     }
 }
