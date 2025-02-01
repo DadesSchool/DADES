@@ -9,7 +9,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0; /* Couleur de fond générale */
+    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Image d'arrière-plan */
+    background-size: cover; /* Pour que l'image couvre toute la page */
+    background-position: center; /* Centrer l'image */
 }
 
 /* Barre d'accueil */
@@ -83,7 +85,7 @@ nav ul li a:hover {
 footer {
     background-color: #026502;
     color: #fff;
-    text-align:center;
+    text-align: center;
     padding: 25px 0;
     position: fixed;
     bottom: 1px;
@@ -132,9 +134,11 @@ button p {
     text-align: center;
     width: 100%; /* Largeur pour centrer le texte */
 }
+
 h1 {
     text-align: center;
 }
+
 /* أنماط عامة */
 body {
     font-family: Arial, sans-serif;
@@ -167,6 +171,4 @@ body {
         width: 100%; /* الأزرار تأخذ العرض الكامل */
         margin-bottom: 10px;
     }
-   
-
 }
