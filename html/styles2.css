@@ -171,4 +171,14 @@ body {
         width: 100%; /* الأزرار تأخذ العرض الكامل */
         margin-bottom: 10px;
     }
+    /* Changer la couleur du texte "Semestre 1", "Semestre 2" et "N.B" */
+button p, .button-container p, .main-section p {
+    color: red; /* Couleur rouge */
+}
+
+/* Optionnel : changer la couleur du texte "N.B" si nécessaire */
+footer p {
+    color: red; /* Si tu veux également changer la couleur du texte dans le footer */
+}
+
 }
