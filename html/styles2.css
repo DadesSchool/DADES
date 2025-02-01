@@ -75,29 +75,48 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-.buttons {
+/* Ajout des styles pour les boutons circulaires */
+.button-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espace entre les boutons */
-    align-items: center;
+    justify-content: center; /* Arrange les boutons en ligne horizontale */
+    gap: 20px; /* Espacement entre les boutons */
+    margin-top: 20px;
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 18px;
+    width: 120px; /* Taille du bouton */
+    height: 120px; /* Taille du bouton */
     border: none;
-    background-color: #F44336;
-    color: white;
+    border-radius: 50%; /* Boutons circulaires */
+    background-color: #ffffff; /* Couleur de fond */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Nécessaire pour positionner le texte */
     cursor: pointer;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+button img {
+    width: 100%; /* Taille de l'image ajustée pour correspondre au bouton */
+    height: 100%;
+    border-radius: 50%; /* Images circulaires */
 }
 
 button:hover {
-    background-color: #d32f2f; /* Couleur de fond lors du survol */
+    transform: scale(1.1); /* Effet d'agrandissement au survol */
 }
 
+button p {
+    position: absolute;
+    bottom: -35px; /* Augmente l'espace entre le bouton et le texte */
+    font-size: 14px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    margin: 0;
+    text-align: center;
+    width: 100%; /* Largeur pour centrer le texte */
+}
 .image-container {
     display: flex;
     justify-content: center;
