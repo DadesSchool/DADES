@@ -25,21 +25,20 @@
     </header>
 
     <!-- Section principale -->
-    
-       <h1>Bienvenu dans notre site web</h1>
-       <p>Choisissez un niveau</p>
-    
-    <div class="content">
-        <!-- Boutons -->
-        <div class="buttons">
-            <button onclick="window.location.href = 'ui.html';">Tronc commun</button>
-            
-        </div>
+    <div class="main-container">
+        <h1>Bienvenue dans notre site web</h1>
+        <p>Choisissez un niveau</p>
+        <div class="content">
+            <!-- Boutons -->
+            <div class="buttons">
+                <button onclick="window.location.href = 'ui.html';">Tronc commun</button>
+            </div>
 
-        <!-- Image avec lien -->
-        <div class="image-container">
-            <img src="b0b78259-37fc-457b-baf6-3ee2f82c706f.png" alt="Image informative">
-            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__g2UQItUMVRMSUZKVFRET1dKSVhQRkdEUzZDQTJIWC4u" target="_blank">Cliquez ici pour plus d'informations</a></p>
+            <!-- Image avec lien -->
+            <div class="image-container">
+                <img src="b0b78259-37fc-457b-baf6-3ee2f82c706f.png" alt="Image informative">
+                <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__g2UQItUMVRMSUZKVFRET1dKSVhQRkdEUzZDQTJIWC4u" target="_blank">Cliquez ici pour plus d'informations</a></p>
+            </div>
         </div>
     </div>
 
@@ -49,5 +48,78 @@
         </div>
     </footer>
 
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #4aac71;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        background-color: #026502;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+
 </body>
 </html>
+
