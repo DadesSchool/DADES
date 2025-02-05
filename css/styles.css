@@ -148,4 +148,8 @@ footer h4, footer p {
     .video-container {
         max-width: 100%;
     }
+    .logo-img {
+    height: 50px; /* تحكم في الحجم حسب الحاجة */
+    }
+
 }
