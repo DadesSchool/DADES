@@ -149,7 +149,8 @@ footer h4, footer p {
         max-width: 100%;
     }
     .logo-img {
-    height: 50px; /* تحكم في الحجم حسب الحاجة */
+    height: 40px; /* قلل الحجم حسب الحاجة */
+    width: auto; /* يحافظ على النسبة الأصلية للصورة */
     }
 
 }
