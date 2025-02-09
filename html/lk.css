@@ -141,6 +141,7 @@ footer {
     .content {
         flex-direction: column;
         text-align: center;
+        background-color: #f0f0f0; /* إضافة خلفية لتأكيد تطبيق الـ Media Query */
     }
 
     .buttons {
@@ -158,4 +159,3 @@ footer {
         max-width: 200px; /* تقليص حجم الصورة إلى 200px */
     }
 }
-
