@@ -1,162 +1,151 @@
-/* Réinitialisation des marges et des paddings pour tous les éléments */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-/* Styles généraux pour le corps de la page */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
-    background-size: cover; /* Pour que l'image de fond couvre toute la page */
-    background-position: center; /* Centrer l'image */
-    padding: 20px;
-}
+        gtag('config', 'G-VW9BXMFMBP');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="PP.png">
+    <title>Mohamed Dades</title>
+    <link rel="stylesheet" href="lk.css">
+</head>
+<body>
 
-/* Barre d'accueil */
-header {
-    background-color: #4aac71; /* Couleur de fond de la barre d'accueil */
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
-}
+    <!-- Barre d'accueil -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="dades">Dades</span><span class="academy">academy</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="1ac.html">Cours Collège</a></li>
+                    <li><a href="hj.html">Cours Lycée</a></li>
+                    <li><a href="ajrada.html">cours en LIVE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    <!-- Section principale -->
+    <div class="main-container">
+        <h1>Bienvenue dans notre site web</h1>
+        <p>Choisissez un niveau</p>
+        <div class="content">
+            <!-- Boutons -->
+            <div class="buttons">
+                <button onclick="window.location.href = '1ack.html';">1 Année Collège</button>
+                <button onclick="window.location.href = 'yy.html';">2 Année Collège</button>
+                <button onclick="window.location.href = 'nb.html';">3 Année Collège</button>
+                <button onclick="window.location.href = 'vv.html';">tronc commun</button>
+            </div>
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-}
+            <!-- Image ajoutée -->
+            <img src="offre en ligne 25.png" alt="Offre en ligne" class="offre-image">
 
-.logo .dades {
-    color: #007bff; /* Bleu pour 'Med' */
-}
+            <!-- Image avec lien -->
+            <div class="image-container">
+                <img src="" alt="">
+                <p><a href="" target="_blank"></a></p>
+            </div>
+        </div>
+    </div>
 
-.logo .school {
-    color: #ffffff; /* Blanc pour 'Dades' */
-}
+    <footer>
+        <div class="container">
+            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+        </div>
+    </footer>
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ccc;
-}
-
-/* Section principale */
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Ajout d'espace entre les éléments */
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espace entre les boutons */
-    align-items: center;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    background-color: #F44336;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #d32f2f; /* Couleur de fond lors du survol */
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.image-container p {
-    margin-top: 10px;
-}
-
-.image-container a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.image-container a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #026502;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Anmaṭj li ajhiza ṣaghīra (shašāt al-hawātif) */
-@media (max-width: 768px) {
-    .content {
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #4aac71;
+        color: #fff;
+        padding: 15px 0;
         text-align: center;
-        background-color: #f0f0f0; /* إضافة خلفية لتأكيد تطبيق الـ Media Query */
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
     .buttons {
-        flex-direction: row;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
         gap: 15px;
+        align-items: center;
     }
 
-    button {
-        padding: 10px 20px;
-        font-size: 14px;
+    .offre-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .image-container img {
-        max-width: 200px; /* تقليص حجم الصورة إلى 200px */
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-}
+
+    footer {
+        background-color: #026502;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+
+</body>
+</html>
+
 
