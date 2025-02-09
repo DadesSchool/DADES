@@ -155,7 +155,7 @@ footer {
     }
 
     .image-container img {
-        max-width: 250px; /* Réduire la taille de l'image sur les petits écrans */
+        max-width: 200px; /* تقليص حجم الصورة إلى 200px */
     }
 }
 
