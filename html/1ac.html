@@ -2,23 +2,160 @@
 <html lang="fr">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VW9BXMFMBP');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VW9BXMFMBP');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="PP.png">
+    <link rel="icon" type="image/png" href="PP.png">
     <title>Mohamed Dades</title>
-    <link rel="stylesheet" href="lk.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4aac71;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dades { color: #007bff; }
+        .academy { color: #fff; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover { opacity: 0.8; }
+
+        .main-container {
+            flex: 1;
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .image-container {
+            border: none; /* إزالة الحاجز الأزرق */
+            border-radius: 0; /* إزالة أي حواف دائرية */
+            padding: 0; /* إزالة المساحة الإضافية */
+            background: none; /* إزالة الخلفية */
+            box-shadow: none; /* إزالة الظل */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        button {
+            background: #F44336;
+            color: white;
+            border: 3px solid #8B0000;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #d32f2f;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #026502;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .image-container {
+                order: 1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .buttons {
+                order: 2;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Barre d'accueil -->
     <header>
         <div class="container">
             <div class="logo">
@@ -35,22 +172,19 @@
         </div>
     </header>
 
-    <!-- Section principale -->
     <div class="main-container">
         <h1>Bienvenue dans notre site web</h1>
         <p>Choisissez un niveau</p>
+        
         <div class="content">
-            <!-- Boutons -->
-            <div class="buttons">
-                <button onclick="window.location.href = 'se.html';">1 Année Collège</button>
-                <button onclick="window.location.href = 'th.html';">2 Année Collège</button>
-                <button onclick="window.location.href = 'gh.html';">3 Année Collège</button>
-            </div>
-
-            <!-- Image avec lien -->
             <div class="image-container">
-                <img src="" alt="">
-                <p><a href="" target="_blank"></a></p>
+                <img src="LM.png" alt="Educational Image"> 
+            </div>
+            
+            <div class="buttons">
+                <button onclick="window.location.href='se.html'">1 Année Collège</button>
+                <button onclick="window.location.href='th.html'">2 Année Collège</button>
+                <button onclick="window.location.href='gh.html'">3 Année Collège</button>
             </div>
         </div>
     </div>
@@ -60,78 +194,5 @@
             <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
         </div>
     </footer>
-
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header {
-        background-color: #4aac71;
-        color: #fff;
-        padding: 15px 0;
-        text-align: center;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
-    .main-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        padding-top: 100px;
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .image-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image-container img {
-        max-width: 300px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-        background-color: #026502;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-    }
-</style>
-
 </body>
 </html>
