@@ -1,55 +1,201 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VW9BXMFMBP');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="PP.png">
     <title>Mohamed Dades</title>
-    <link rel="stylesheet" href="styles2.css">
-    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4aac71;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dades { color: #007bff; }
+        .academy { color: #fff; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover { opacity: 0.8; }
+
+        .main-container {
+            flex: 1;
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .image-button {
+            width: 250px;
+            height: 250px;
+            border: none;
+            border-radius: 10px;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .image-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .view-full-image-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view-full-image-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .table-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         th, td {
             border: 1px solid #ccc;
             padding: 10px;
             text-align: center;
         }
+
         th {
             cursor: pointer;
             background-color: #84c1ff;
             color: #000;
         }
+
         th:hover {
             background-color: #6aa6e2;
         }
+
         tbody tr:nth-child(even) {
             background-color: #e8f4ff;
         }
+
         tbody tr:nth-child(odd) {
             background-color: #ffffff;
         }
-        .image-container {
+
+        footer {
+            background: #026502;
+            color: white;
             text-align: center;
-            margin-top: 20px;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
         }
+
+        /* Modal (popup image) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-link {
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .modal-link:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
-
-    <!-- Barre d'accueil -->
     <header>
         <div class="container">
             <div class="logo">
@@ -66,42 +212,69 @@
         </div>
     </header>
 
-    <!-- Contenu principal avec le tableau -->
-    <h1>Bienvenue dans notre site web</h1>
-  
-    <div class="table-container">
-        <table id="sortable-table">
-            <thead>
-                <tr>
-                    <th onclick="sortTable(0)">Les cours en LIVE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Links</td>
-                </tr>
-                <tr>
-                    <td><a href="https://forms.office.com/r/7wmWcBRs9M	">Cliquez pour s'inscrire au cours</a></td>
-                </tr>
-           </tbody>
-           <tbody>
-                <tr>
-                    <td>Lien ZOOM</td>
-                </tr>
-                <tr>
-                    <td><a href="https://us06web.zoom.us/j/81010508428?pwd=UGUs9k9JtjpxNTY9Q6TxD7YncJJJ7a.1">Cliquez pour assister au cours</a></td>
-                </tr>
-           </tbody>
-        </table>
+    <div class="main-container">
+        <!-- Image qui servira de bouton pour afficher la modale -->
+        <button class="image-button" onclick="openModal()">
+            <img src="h.png" alt="Image pour ouvrir en grand" />
+        </button>
+
+        <div class="table-container">
+            <table id="sortable-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Les cours en LIVE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Links</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://forms.office.com/r/msLSguvzmv">Cliquez pour s'inscrire au cours</a></td>
+                    </tr>
+               </tbody>
+               <tbody>
+                    <tr>
+                        <td>Lien ZOOM</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://us06web.zoom.us/j/84711474898?pwd=FGy2d6u2JOZ0gl88EUAqLjtBRy7R8h.1">Cliquez pour rejoindre le cours</a></td>
+                    </tr>
+               </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <button class="view-full-image-btn" onclick="openModal()">Voir l'image complète</button>
+
+    <!-- Modal (popup) -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01" src="h.png" />
+        <a href="h.png" class="modal-link" target="_blank">plus d'infos</a> <!-- Lien sous l'image -->
     </div>
 
-    <!-- الصورة بعد الجدول -->
-    <div class="image-container">
-        <img src="tcs.png" alt="وصف الصورة" width="500">
-    </div>
+    <footer>
+        <div class="container">
+            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+        </div>
+    </footer>
 
-    <!-- Script pour activer le tri -->
     <script>
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "flex";
+            modalImg.src = "h.png"; // Affiche l'image en grand dans la modale
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Fonction pour trier le tableau
         function sortTable(columnIndex) {
             const table = document.getElementById("sortable-table");
             const rows = Array.from(table.rows).slice(1); // Exclure la ligne d'en-tête
@@ -122,13 +295,5 @@
             table.setAttribute("data-sort-direction", isAscending ? "asc" : "desc");
         }
     </script>
-
-    <!-- Pied de page -->
-    <footer>
-        <div class="container">
-            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
-        </div>
-    </footer>
-
 </body>
 </html>
