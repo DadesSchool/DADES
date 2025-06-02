@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VW9BXMFMBP');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="PP.png">
+    <title>Mohamed Dades</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4aac71;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dades { color: #007bff; }
+        .academy { color: #fff; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover { opacity: 0.8; }
+
+        .main-container {
+            flex: 1;
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .image-container {
+            border: none; /* إزالة الحاجز الأزرق */
+            border-radius: 0; /* إزالة أي حواف دائرية */
+            padding: 0; /* إزالة المساحة الإضافية */
+            background: none; /* إزالة الخلفية */
+            box-shadow: none; /* إزالة الظل */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        button {
+            background: #F44336;
+            color: white;
+            border: 3px solid #8B0000;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #d32f2f;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #026502;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .image-container {
+                order: 1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .buttons {
+                order: 2;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="dades">Dades</span><span class="academy">academy</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="1ac.html">Cours Collège</a></li>
+                    <li><a href="hj.html">Cours Lycée</a></li>
+                    <li><a href="ajrada.html">cours en LIVE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h1>Bienvenue dans notre site web</h1>
+        <p>Choisissez un niveau</p>
+        
+        <div class="content">
+            <div class="image-container">
+                <img src="pvc.jpg" alt="Educational Image"> 
+            </div>
+
+            <h1>Réservé aux abonnés
+Contacter nous sur WhatsApp
+0666295057-Offre exceptionnel: 150 DHS</h1>-<h1></h1>
+ 
+
+
+    <footer>
+        <div class="container">
+            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+        </div>
+    </footer>
+</body>
+</html>
