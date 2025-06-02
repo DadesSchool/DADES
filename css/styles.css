@@ -9,14 +9,14 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Image d'arrière-plan */
+    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
     background-size: cover;
     background-position: center;
 }
 
 /* Barre d'accueil */
 header {
-    background-color: #000000; /* Couleur de fond de la barre d'accueil */
+    background-color: #000000;
     color: #fff;
     padding: 10px 0;
 }
@@ -31,16 +31,13 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
-.logo .dades {
-    color: #007bff;
-}
-
-.logo .academy {
-    color: #ffffff;
+.logo-img {
+    height: 50px;
+    width: auto;
 }
 
 nav ul {
@@ -62,6 +59,23 @@ nav ul li a:hover {
     color: #d70909;
 }
 
+/* Bouton Révision */
+.revision-button {
+    background-color: #F44336;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.revision-button:hover {
+    background-color: #b71c1c;
+}
+
 /* Section principale avec boutons et vidéo */
 .media-section {
     display: flex;
@@ -70,7 +84,7 @@ nav ul li a:hover {
     align-items: center;
     margin: 20px 0;
     padding: 20px;
-    background-color: #77b5de; /* Fond pour la section des médias */
+    background-color: #77b5de;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     gap: 20px;
@@ -129,16 +143,6 @@ footer h4, footer p {
     margin: 5px 0;
 }
 
-/* Section principale avec image d'arrière-plan */
-.main-section {
-    background-image: url("po.jpg");
-    background-size: cover;
-    background-position: center;
-    color: transparent;
-    text-align: center;
-    padding: 100px 0;
-}
-
 /* Pour les appareils mobiles */
 @media (max-width: 768px) {
     .media-section {
@@ -148,9 +152,15 @@ footer h4, footer p {
     .video-container {
         max-width: 100%;
     }
+
     .logo-img {
-    height: 40px; /* قلل الحجم حسب الحاجة */
-    width: auto; /* يحافظ على النسبة الأصلية للصورة */
+        height: 40px;
+        width: auto;
     }
 
+    .revision-button {
+        padding: 8px 15px;
+        font-size: 16px;
+        margin-left: 10px;
+    }
 }
