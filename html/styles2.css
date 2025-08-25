@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg"); /* Image d'arrière-plan */
+    background-image: url(""); /* Image d'arrière-plan */
     background-size: cover; /* Pour que l'image couvre toute la page */
     background-position: center; /* Centrer l'image */
 }
@@ -199,4 +199,5 @@ button p {
 h1 {
     text-align: center;
 }
+
 
