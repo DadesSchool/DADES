@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
+    background-image: url("");
     background-size: cover;
     background-position: center;
 }
@@ -164,4 +164,5 @@ footer h4, footer p {
         margin-left: 10px;
     }
 }
+
 
