@@ -159,73 +159,44 @@
 
     const lessons = [
       {
-        title: "Découverte des milieux naturels",
-        resume: { file: "", img: "img/sortie-resume.jpg", note: "PDF – notions principales + schémas" },
-        exercises: [
-          { title: "Série 1 – sortie", file: "", img: "img/sortie-exos.jpg", meta: "PDF • 2 pages" },
-          { title: "Série 2 – analyse de données", file: "", img: "img/sortie-exos2.jpg", meta: "PDF • 3 pages" }
-        ],
-        activities: [
-          { title: "Activité 1 – sortie et relevés", file: "", img: "img/sortie-activite-1.jpg", meta: "PDF • 4 pages" },
-          { title: "Activité 2 – identification d’espèces", file: "", img: "img/sortie-activite-2.jpg", meta: "PDF • 3 pages" },
-          { title: "Activité 3 – analyse des résultats", file: "", img: "img/sortie-activite-3.jpg", meta: "PDF • 2 pages" },
-        ],
-        videos: [
-          { type: "file", src: "videos/sortie.mp4", poster: "seismes.jpg", title: "Sortie – Explications", note: "Durée conseillée: 8–12 min" },
-          { type: "youtube", id: "dQw4w9WgXcQ", title: "Playlist Chapitre 1", note: "YouTube" }
-        ]
-      },
-      {
-        title: "La respiration et milieux de vie des êtres vivants",
-        resume: { file: "", img: "img/edaphiques-resume.jpg", note: "Profil de sol, texture, pH…" },
-        exercises: { title: "Exercices", file: "", img: "img/edaphiques-exos.jpg", note: "QCM + exercices appliqués" },
-        activities: [
-          { title: "Activité 1 – étude de profil", file: "", img: "img/edaphiques-activite-1.jpg", meta: "PDF • 5 pages" },
-          { title: "Activité 2 – granulométrie", file: "", img: "img/edaphiques-activite-2.jpg", meta: "PDF • 3 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/edaphiques.mp4", poster: "img/edaphiques-video.jpg", title: "Expériences + explications", note: "Cas pratiques" }
-        ]
-      },
-      {
-        title: "L’alimentation chez les êtres vivants",
-        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-        exercises: [
-          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-      {
-        title: "Les relations trophiques et les équilibres naturels",
-        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-        exercises: [
-          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-      {
-        title: "Classification des êtres vivants",
-        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-        exercises: [
-          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      }
+    title: "Découverte des milieux naturels",
+    resume:   { file: "", img: "Ecol.jpg", note: "Notions + schémas" },
+    exercises:[ { title: "Exercices", file: "", img: "Ecol.jpg", meta: "PDF • corrigés" } ],
+    activities:[ { title: "Activité 1", file: "", img: "Ecol.jpg", meta: "PDF • 4 pages" } ],
+    videos:   [ { type: "file", src: "", poster: "Ecol.jpg", title: "Explications", note: "Cas pratiques" } ]
+  },
+
+  {
+    title: "La respiration et milieux de vie des êtres vivants",
+    resume:   { file: "", img: "res.jpg", note: "Notions + schémas" },
+    exercises: { title: "Exercices", file: "", img: "res.jpg", note: "QCM + exercices appliqués" },
+    activities:[ { title: "Activité 1", file: "", img: "res.jpg", meta: "PDF • 5 pages" } ],
+    videos:   [ { type: "file", src: "", poster: "res.jpg", title: "Expériences + explications", note: "Cas pratiques" } ]
+  },
+
+  {
+    title: "L’alimentation chez les êtres vivants",
+    resume:   { file: "", img: "r.jpg", note: "Notions + schémas" },
+    exercises:[ { title: "Exercices guidés", file: "", img: "r.jpg", meta: "PDF • corrigés" } ],
+    activities:[ { title: "Activité 1", file: "", img: "r.jpg", meta: "PDF • 4 pages" } ],
+    videos:   [ { type: "file", src: "", poster: "r.jpg", title: "Exemples réels", note: "Observation & analyse" } ]
+  },
+
+  {
+    title: "Les relations trophiques et les équilibres naturels",
+    resume:   { file: "", img: "equi.jpg", note: "Notions + schémas" },
+    exercises:[ { title: "Exercices guidés", file: "", img: "equi.jpg", meta: "PDF • corrigés" } ],
+    activities:[ { title: "Activité 1", file: "", img: "equi.jpg", meta: "PDF • 4 pages" } ],
+    videos:   [ { type: "file", src: "", poster: "equi.jpg", title: "Exemples réels", note: "Observation & analyse" } ]
+  },
+
+  {
+    title: "Classification des êtres vivants",
+    resume:   { file: "", img: "fleux.jpg", note: "Notions + schémas" },
+    exercises:[ { title: "Exercices guidés", file: "", img: "fleux.jpg", meta: "PDF • corrigés" } ],
+    activities:[ { title: "Activité 1", file: "", img: "fleux.jpg", meta: "PDF • 4 pages" } ],
+    videos:   [ { type: "file", src: "", poster: "fleux.jpg", title: "Exemples réels", note: "Observation & analyse" } ]
+  }
     ];
 
     // ========== Helpers ==========
@@ -398,4 +369,5 @@
   </footer>
 </body>
 </html>
+
 
