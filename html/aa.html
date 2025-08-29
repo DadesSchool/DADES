@@ -142,253 +142,226 @@
   <div id="lessons-root"></div>
 
   <!-- ========== Data & Renderer ========== -->
-  <script>
-    /*
-     * ✅ الآن: exercices و videos يدعمان عناصر متعددة مثل activities
-     * الحقول كلها اختيارية؛ اتركها فارغة وسيظهر "لاحقًا"
-     */
-    const lessons = [
-      {
-        title: "La reproduction sexuée des plantes à fleurs",
-        resume: { file: "resume-sortie.pdf", img: "img/sortie-resume.jpg", note: "PDF – notions principales + schémas" },
+<script>
+  // === Helpers مع إشعار وتعطيل الروابط إلا كان الملف فارغ ===
+  function esc(s){ return (s||"").toString().replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[m])); }
+  function imgTag(src, alt, cls="thumb"){ return src ? `<img class="${cls}" src="${esc(src)}" alt="${esc(alt||'')}" loading="lazy">` : `<div class="${cls}" style="display:flex;align-items:center;justify-content:center;color:#777">لاحقًا</div>`; }
+  function toArray(maybeArray){ if(!maybeArray) return []; return Array.isArray(maybeArray)?maybeArray:[{ title:maybeArray.title||"", file:maybeArray.file, img:maybeArray.img, meta:maybeArray.note||maybeArray.meta }]; }
+  function hasFile(path){ return !!(path && String(path).trim()!==""); }
+  function notUploadedNote(){ return "La leçon n’a pas encore été mise en ligne par l’enseignant(e)."; }
 
-        /* عدة تمارين */
-        exercises: [
-          { title: "Série 1 – sortie", file: "exercices-sortie-1.pdf", img: "img/sortie-exos.jpg", meta: "PDF • 2 pages" },
-          { title: "Série 2 – analyse de données", file: "exercices-sortie-2.pdf", img: "img/sortie-exos2.jpg", meta: "PDF • 3 pages" }
-        ],
-
-        /* أنشطة متعددة */
-        activities: [
-          { title: "Activité 1 – sortie et relevés", file: "Cours sortie écologique.pdf", img: "img/sortie-activite-1.jpg", meta: "PDF • 4 pages" },
-          { title: "Activité 2 – identification d’espèces", file: "sortie-activite-2.pdf", img: "img/sortie-activite-2.jpg", meta: "PDF • 3 pages" },
-          { title: "Activité 3 – analyse des résultats", file: "sortie-activite-3.pdf", img: "img/sortie-activite-3.jpg", meta: "PDF • 2 pages" },
-        ],
-
-        /* عدة فيديوهات: mp4 و YouTube */
-        videos: [
-          { type: "file", src: "videos/sortie.mp4", poster: "seismes.jpg", title: "Sortie – Explications", note: "Durée conseillée: 8–12 min" },
-          { type: "youtube", id: "dQw4w9WgXcQ", title: "Playlist Chapitre 1", note: "YouTube" }
-        ]
-      },
-      {
-        title: "La reproduction sexuée des plantes sans fleurs",
-        resume: { file: "resume-edaphiques.pdf", img: "img/edaphiques-resume.jpg", note: "Profil de sol, texture, pH…" },
-
-        exercises: { file: "exercices-edaphiques.pdf", img: "img/edaphiques-exos.jpg", note: "QCM + exercices appliqués" }, // ✅ ستتحوّل تلقائيًا إلى لائحة بعنصر واحد
-
-        activities: [
-          { title: "Activité 1 – étude de profil", file: "CHAP. 2 FACTEURS EDAPHIQUES.pdf", img: "img/edaphiques-activite-1.jpg", meta: "PDF • 5 pages" },
-          { title: "Activité 2 – granulométrie", file: "edaphiques-activite-2.pdf", img: "img/edaphiques-activite-2.jpg", meta: "PDF • 3 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/edaphiques.mp4", poster: "img/edaphiques-video.jpg", title: "Expériences + explications", note: "Cas pratiques" }
-        ]
-      },
-      {
-        title: "Les cycles de développement des plantes",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-            {
-        title: "La reproduction asexuée",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-      {
-        title: "La modification génétique des plantes (PGM)",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-            {
-        title: "Classification des plantes",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },       
-    ];
-
-    // ========== Helpers ==========
-    function esc(s){ return (s||"").toString().replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
-    function imgTag(src, alt, cls="thumb"){ return src ? `<img class="${cls}" src="${esc(src)}" alt="${esc(alt||'')}" loading="lazy">` : `<div class="${cls}" style="display:flex;align-items:center;justify-content:center;color:#777">لاحقًا</div>`; }
-
-    // يحوّل كائن مفرد إلى لائحة لضمان التوافق
-    function toArray(maybeArray){
-      if (!maybeArray) return [];
-      return Array.isArray(maybeArray) ? maybeArray
-        : [ { title: maybeArray.title || "", file: maybeArray.file, img: maybeArray.img, meta: maybeArray.note || maybeArray.meta } ];
-    }
-
-    function fileCard(colClass, data, tagText, lessonTitle){
-      if(!data) return `
-        <div class="cell-card ${colClass}">
-          ${imgTag(null)}
-          <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">${esc(tagText)}</div><div class="sub">لاحقًا</div></div>
-        </div>`;
+  function fileCard(colClass, data, tagText, lessonTitle){
+    const missing = !data || !hasFile(data.file);
+    if(missing){
       return `
-        <a class="cell-card ${colClass}" href="${esc(data.file)}" download>
-          ${imgTag(data.img, `${tagText} – ${lessonTitle}`)}
+        <div class="cell-card ${colClass}">
+          ${imgTag(data && data.img, `${tagText} – ${lessonTitle}`)}
           <div class="info">
             <span class="tag">${esc(lessonTitle)}</span>
             <div class="title">${esc(tagText)}</div>
-            ${data.note ? `<div class="sub">${esc(data.note)}</div>` : ``}
-          </div>
-        </a>`;
-    }
-
-    // بطاقة لائحة PDF عامة (Exercices / Activités)
-    function pdfListCard(colClass, items, coverImg, lessonTitle, heading){
-      const list = toArray(items);
-      if(list.length===0){
-        return `
-          <div class="cell-card ${colClass}">
-            ${imgTag(coverImg, `${heading} – ${lessonTitle}`)}
-            <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">${esc(heading)}</div><div class="sub">لاحقًا</div></div>
-          </div>`;
-      }
-      const firstThumb = coverImg || list[0].img;
-      const rows = list.map(a=>`
-        <a class="mini" href="${esc(a.file)}" download>
-          ${imgTag(a.img, a.title||heading, "mini-thumb")}
-          <div>
-            <div><strong>${esc(a.title||heading)}</strong></div>
-            ${a.meta?`<div class="meta">${esc(a.meta)}</div>`:''}
-          </div>
-        </a>
-      `).join("");
-      return `
-        <div class="cell-card ${colClass}">
-          ${imgTag(firstThumb, `${heading} – ${lessonTitle}`)}
-          <div class="info">
-            <span class="tag">${esc(lessonTitle)}</span>
-            <div class="title">${esc(heading)}</div>
-            <div class="stack" style="margin-top:6px">${rows}</div>
+            <div class="sub" style="background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:8px 10px">
+              ${notUploadedNote()}
+            </div>
           </div>
         </div>`;
     }
+    return `
+      <a class="cell-card ${colClass}" href="${esc(data.file)}" target="_blank" rel="noopener">
+        ${imgTag(data.img, `${tagText} – ${lessonTitle}`)}
+        <div class="info">
+          <span class="tag">${esc(lessonTitle)}</span>
+          <div class="title">${esc(tagText)}</div>
+          ${data.note?`<div class="sub">${esc(data.note)}</div>`:''}
+        </div>
+      </a>`;
+  }
 
-    // مولّد بلاير فيديو
-    function renderPlayer(v, lessonTitle){
-      if(!v) return `<div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>`;
-      if (v.type === 'youtube'){
-        return `<div class="video-box"><iframe src="https://www.youtube.com/embed/${esc(v.id)}" title="Vidéo – ${esc(lessonTitle)}" allowfullscreen></iframe></div>`;
-      }
-      return `<div class="video-box"><video controls preload="metadata" ${v.poster?`poster="${esc(v.poster)}"`:''}><source src="${esc(v.src)}" type="video/mp4"></video></div>`;
-    }
+  function pdfListCard(colClass, items, coverImg, lessonTitle, heading){
+    const list = toArray(items);
+    const hasAny = list.some(a=>hasFile(a.file));
+    const firstThumb = coverImg || (list[0] && list[0].img) || null;
 
-    // تبديل الفيديو في نفس البطاقة
-    function playVideo(containerId, raw){
-      try{
-        const v = JSON.parse(raw);
-        const el = document.getElementById(containerId);
-        if(!el) return;
-        el.innerHTML = renderPlayer(v, v.title || "Vidéo");
-        // تمرير التركيز لتسهيل الوصول
-        const foc = el.querySelector('video,iframe');
-        if(foc) foc.focus();
-      }catch(e){}
-    }
-    window.playVideo = playVideo; // نجعلها عامة للاستخدام من ال onclick
-
-    function videoListCard(videos, lessonTitle){
-      const list = toArray(videos);
-      if(list.length===0){
+    const rows = list.map(a=>{
+      const label = a.title || heading;
+      const meta  = a.meta ? `<div class="meta">${esc(a.meta)}</div>` : '';
+      const thumb = imgTag(a.img, label, "mini-thumb");
+      if(hasFile(a.file)){
         return `
-          <div class="cell-card vid">
-            <div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>
-            <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">Vidéos</div><div class="sub">Aucune vidéo pour le moment</div></div>
-          </div>`;
-      }
-      const playerId = 'player_' + Math.random().toString(36).slice(2,9);
-      const player = renderPlayer(list[0], lessonTitle);
-      const rows = list.map((v,i)=>{
-        const payload = esc(JSON.stringify(v));
-        const isFirst = i===0;
-        const label = v.title || (v.type==='youtube' ? 'YouTube' : 'Vidéo MP4');
-        const meta = v.note || (v.type==='youtube' ? 'YouTube' : 'MP4');
-        const thumb = v.poster || v.img || (v.type==='youtube' ? `https://img.youtube.com/vi/${v.id}/hqdefault.jpg` : '');
-        // إذا كان YouTube ونبغي نفتح في تاب، نستعمل <a> بدون تبديل
-        const click = `onclick="playVideo('${playerId}','${payload}'); return false;"`;
-        return `
-          <a class="mini" href="#" ${click} aria-label="Lire: ${esc(label)}">
-            ${imgTag(thumb, label, "mini-thumb")}
-            <div>
-              <div><strong>${esc(label)}</strong>${isFirst?' <span class="meta">(en cours)</span>':''}</div>
-              ${meta?`<div class="meta">${esc(meta)}</div>`:''}
-            </div>
+          <a class="mini" href="${esc(a.file)}" target="_blank" rel="noopener">
+            ${thumb}
+            <div><div><strong>${esc(label)}</strong></div>${meta}</div>
           </a>`;
-      }).join("");
+      }
+      return `
+        <div class="mini" style="opacity:.6;pointer-events:none" aria-disabled="true">
+          ${thumb}
+          <div><div><strong>${esc(label)}</strong></div><div class="meta">Non disponible pour le moment</div></div>
+        </div>`;
+    }).join("");
 
+    return `
+      <div class="cell-card ${colClass}">
+        ${imgTag(firstThumb, `${heading} – ${lessonTitle}`)}
+        <div class="info">
+          <span class="tag">${esc(lessonTitle)}</span>
+          <div class="title">${esc(heading)}</div>
+          ${!hasAny?`<div class="sub" style="background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:8px 10px">${notUploadedNote()}</div>`:''}
+          <div class="stack" style="margin-top:6px">${rows}</div>
+        </div>
+      </div>`;
+  }
+
+  function renderPlayer(v, lessonTitle){
+    if(!v || !hasFile(v.src)){
+      return `<div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>`;
+    }
+    return `<div class="video-box"><video controls preload="metadata" ${v.poster?`poster="${esc(v.poster)}"`:''}><source src="${esc(v.src)}" type="video/mp4"></video></div>`;
+  }
+
+  function videoListCard(videos, lessonTitle){
+    const list = toArray(videos);
+    if(list.length===0){
       return `
         <div class="cell-card vid">
-          <div id="${playerId}">
-            ${player}
-          </div>
-          <div class="info">
-            <span class="tag">${esc(lessonTitle)}</span>
-            <div class="title">Vidéos</div>
-            <div class="stack" style="margin-top:6px">${rows}</div>
-          </div>
+          <div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>
+          <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">Vidéos</div><div class="sub">Aucune vidéo pour le moment</div></div>
         </div>`;
     }
+    const firstPlayable = list.find(v=>hasFile(v.src));
+    const player = renderPlayer(firstPlayable, lessonTitle);
 
-    function renderLesson(lesson){
-      const coverAct = lesson.activities && toArray(lesson.activities)[0] ? toArray(lesson.activities)[0].img : null;
-      const coverExo = lesson.exercises && toArray(lesson.exercises)[0] ? toArray(lesson.exercises)[0].img : null;
+    const rows = list.map(v=>{
+      const label = v.title || 'Vidéo MP4';
+      const meta  = v.note  || 'MP4';
+      const thumb = v.poster || '';
+      if(hasFile(v.src)){
+        return `
+          <div class="mini" onclick="this.closest('.cell-card').querySelector('.video-slot').innerHTML=\`${renderPlayer(v, lessonTitle).replace(/`/g,'\\`')}\`;">
+            ${imgTag(thumb, label, "mini-thumb")}
+            <div><div><strong>${esc(label)}</strong></div><div class="meta">${esc(meta)}</div></div>
+          </div>`;
+      }
       return `
-        <section class="lesson" id="${esc(lesson.title).toLowerCase().replace(/\s+/g,'-')}">
-          <div class="lesson-grid">
-            <h2 class="lesson-title">${esc(lesson.title)}</h2>
+        <div class="mini" style="opacity:.6;pointer-events:none" aria-disabled="true">
+          ${imgTag(thumb, label, "mini-thumb")}
+          <div><div><strong>${esc(label)}</strong></div><div class="meta">Non disponible pour le moment</div></div>
+        </div>`;
+    }).join("");
 
-            ${fileCard('res', lesson.resume, 'Résumé du cours', lesson.title)}
+    return `
+      <div class="cell-card vid">
+        <div class="video-slot">${player}</div>
+        <div class="info">
+          <span class="tag">${esc(lessonTitle)}</span>
+          <div class="title">Vidéos</div>
+          <div class="stack" style="margin-top:6px">${rows}</div>
+        </div>
+      </div>`;
+  }
 
-            ${pdfListCard('exo', lesson.exercises, coverExo, lesson.title, 'Exercices (PDF)')}
-
-            ${pdfListCard('act', lesson.activities, coverAct, lesson.title, 'Activités (PDF)')}
-
-            ${videoListCard(lesson.videos, lesson.title)}
-          </div>
-        </section>`;
+  // === DATA مُفرّغ (كل file/src/id فاضي) ===
+  const lessons = [
+    {
+      title: "La reproduction sexuée des plantes à fleurs",
+      resume: { file: "", img: "img/sortie-resume.jpg", note: "PDF – notions principales + schémas" },
+      exercises: [
+        { title: "Série 1 – sortie", file: "", img: "img/sortie-exos.jpg", meta: "PDF • 2 pages" },
+        { title: "Série 2 – analyse de données", file: "", img: "img/sortie-exos2.jpg", meta: "PDF • 3 pages" }
+      ],
+      activities: [
+        { title: "Activité 1 – sortie et relevés", file: "", img: "img/sortie-activite-1.jpg", meta: "PDF • 4 pages" },
+        { title: "Activité 2 – identification d’espèces", file: "", img: "img/sortie-activite-2.jpg", meta: "PDF • 3 pages" },
+        { title: "Activité 3 – analyse des résultats", file: "", img: "img/sortie-activite-3.jpg", meta: "PDF • 2 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "seismes.jpg", title: "Sortie – Explications", note: "Durée conseillée: 8–12 min" }
+      ]
+    },
+    {
+      title: "La reproduction sexuée des plantes sans fleurs",
+      resume: { file: "", img: "img/edaphiques-resume.jpg", note: "Profil de sol, texture, pH…" },
+      exercises: { title: "Exercices", file: "", img: "img/edaphiques-exos.jpg", note: "QCM + exercices appliqués" },
+      activities: [
+        { title: "Activité 1 – étude de profil", file: "", img: "img/edaphiques-activite-1.jpg", meta: "PDF • 5 pages" },
+        { title: "Activité 2 – granulométrie", file: "", img: "img/edaphiques-activite-2.jpg", meta: "PDF • 3 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "img/edaphiques-video.jpg", title: "Expériences + explications", note: "Cas pratiques" }
+      ]
+    },
+    {
+      title: "Les cycles de développement des plantes",
+      resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+      exercises: [
+        { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+      ],
+      activities: [
+        { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+      ]
+    },
+    {
+      title: "La reproduction asexuée",
+      resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+      exercises: [
+        { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+      ],
+      activities: [
+        { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+      ]
+    },
+    {
+      title: "La modification génétique des plantes (PGM)",
+      resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+      exercises: [
+        { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+      ],
+      activities: [
+        { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+      ]
+    },
+    {
+      title: "Classification des plantes",
+      resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+      exercises: [
+        { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+      ],
+      activities: [
+        { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+      ],
+      videos: [
+        { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+      ]
     }
+  ];
 
-    const root = document.getElementById('lessons-root');
-    root.innerHTML = lessons.map(renderLesson).join('');
-  </script>
+  function renderLesson(lesson){
+    const coverAct = lesson.activities && toArray(lesson.activities)[0] ? toArray(lesson.activities)[0].img : null;
+    const coverExo = lesson.exercises && toArray(lesson.exercises)[0] ? toArray(lesson.exercises)[0].img : null;
+    return `
+      <section class="lesson" id="${esc(lesson.title).toLowerCase().replace(/\s+/g,'-')}">
+        <div class="lesson-grid">
+          <h2 class="lesson-title">${esc(lesson.title)}</h2>
+          ${fileCard('res', lesson.resume, 'Résumé du cours', lesson.title)}
+          ${pdfListCard('exo', lesson.exercises, coverExo, lesson.title, 'Exercices (PDF)')}
+          ${pdfListCard('act', lesson.activities, coverAct, lesson.title, 'Activités (PDF)')}
+          ${videoListCard(lesson.videos, lesson.title)}
+        </div>
+      </section>`;
+  }
+
+  const root = document.getElementById('lessons-root');
+  root.innerHTML = lessons.map(renderLesson).join('');
+</script>
+
 
   <!-- Footer -->
   <footer>
@@ -396,4 +369,5 @@
   </footer>
 </body>
 </html>
+
 
