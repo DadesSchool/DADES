@@ -3,28 +3,24 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dades academy – Cours SVT (Semstre 1)</title>
+  <title>Dades academy – Cours SVT (Semestre 2)</title>
   <link rel="icon" type="image/png" href="PP.png"/>
 
   <style>
-    /* ========== Reset & Theme ========== */
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
       --green:#4aac71; --green-dark:#026502; --ink:#111; --muted:#6b7280;
       --panel:#fff; --soft:#f7faf8; --soft-b:#e3eee7; --soft-h:#eef7f1; --link:#007bff;
 
-      /* ألوان الأعمدة (Pastel) */
       --resume-bg:#f3e5f5;  --resume-b:#e1bee7;  --resume-text:#6a1b9a;
       --exo-bg:#e8f5e9;     --exo-b:#c8e6c9;     --exo-text:#2e7d32;
       --acti-bg:#fff3e0;    --acti-b:#ffe0b2;    --acti-text:#ef6c00;
       --video-bg:#e3f2fd;   --video-b:#bbdefb;   --video-text:#1565c0;
 
-      --thumb-h: 160px; --radiusL: 16px; --gap: 18px; --maxw: 1200px;
+      --thumb-h:160px; --radiusL:16px; --gap:18px; --maxw:1200px;
     }
-
     body{font-family:Arial, sans-serif;line-height:1.6;background:#fff;color:var(--ink);padding-bottom:90px}
 
-    /* ========== Header ========== */
     header{background:var(--green);color:#fff;padding:10px 0}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
     .logo{font-size:1.5rem;font-weight:bold}
@@ -34,10 +30,8 @@
     nav a{color:#fff;text-decoration:none}
     nav a:hover{color:#e5e5e5}
 
-    /* ========== Page title ========== */
     h1{margin:20px;text-align:center;color:#1f1f1f}
 
-    /* ========== Column headers (sticky) ========== */
     .grid-head{
       max-width:var(--maxw);margin:8px auto 0;padding:0 20px;
       display:grid;grid-template-columns:240px repeat(4,1fr);gap:var(--gap);
@@ -53,66 +47,51 @@
     .head-cell.act{color:var(--acti-text);border-color:var(--acti-b)}
     .head-cell.vid{color:var(--video-text);border-color:var(--video-b)}
 
-    /* ========== Lesson row ========== */
     .lesson{max-width:var(--maxw);margin:18px auto;padding:0 20px}
-    .lesson-grid{
-      display:grid;grid-template-columns:240px repeat(4,1fr);gap:var(--gap);align-items:start;
-    }
-    .lesson-title{
-      font-weight:800;color:#155b31; padding:12px 0;
-      border-left:6px solid var(--green); padding-left:10px;
-    }
+    .lesson-grid{display:grid;grid-template-columns:240px repeat(4,1fr);gap:var(--gap);align-items:start}
+    .lesson-title{font-weight:800;color:#155b31;padding:12px 0;border-left:6px solid var(--green);padding-left:10px}
 
-    /* ========== Cards ========== */
     .cell-card{
-      border-radius:var(--radiusL); overflow:hidden; background:var(--panel);
-      border:1px solid var(--soft-b); box-shadow:0 4px 18px rgba(0,0,0,.06);
-      transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column; min-height:100%;
-      text-decoration:none; color:inherit;
+      border-radius:var(--radiusL);overflow:hidden;background:var(--panel);
+      border:1px solid var(--soft-b);box-shadow:0 4px 18px rgba(0,0,0,.06);
+      transition:transform .25s ease, box-shadow .25s ease;display:flex;flex-direction:column;min-height:100%;
+      text-decoration:none;color:inherit;
     }
     .cell-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.10)}
-    .thumb{width:100%; height:var(--thumb-h); object-fit:cover; display:block; background:#ddd}
-    .video-box{position:relative; width:100%; aspect-ratio:16/9; background:#000}
-    .video-box video, .video-box iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .thumb{width:100%;height:var(--thumb-h);object-fit:cover;display:block;background:#ddd}
 
-    .info{padding:12px 14px; display:flex; flex-direction:column; gap:6px}
-    .tag{font-size:.78rem; font-weight:700; display:inline-block; padding:4px 8px; border-radius:999px}
-    .title{font-weight:700; font-size:.98rem}
-    .sub{font-size:.85rem; color:var(--muted)}
+    .video-box{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+    .video-box video{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-    .res .info{background:var(--resume-bg); border-top:1px solid var(--resume-b)}
-    .res .tag{background:var(--resume-b); color:var(--resume-text)}
-    .exo .info{background:var(--exo-bg);    border-top:1px solid var(--exo-b)}
-    .exo .tag{background:var(--exo-b);     color:var(--exo-text)}
-    .act .info{background:var(--acti-bg);   border-top:1px solid var(--acti-b)}
-    .act .tag{background:var(--acti-b);    color:var(--acti-text)}
-    .vid .info{background:var(--video-bg);  border-top:1px solid var(--video-b)}
-    .vid .tag{background:var(--video-b);   color:var(--video-text)}
+    .info{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+    .tag{font-size:.78rem;font-weight:700;display:inline-block;padding:4px 8px;border-radius:999px}
+    .title{font-weight:700;font-size:.98rem}
+    .sub{font-size:.85rem;color:var(--muted)}
 
-    /* لائحة عناصر داخل الكارد */
-    .stack{display:flex; flex-direction:column; gap:12px}
-    .mini{display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; cursor:pointer}
-    .mini-thumb{width:64px; height:48px; object-fit:cover; border-radius:8px; background:#ddd; flex:0 0 64px}
-    .mini .meta{font-size:.8rem; color:var(--muted)}
+    .res .info{background:var(--resume-bg);border-top:1px solid var(--resume-b)}
+    .res .tag{background:var(--resume-b);color:var(--resume-text)}
+    .exo .info{background:var(--exo-bg);border-top:1px solid var(--exo-b)}
+    .exo .tag{background:var(--exo-b);color:var(--exo-text)}
+    .act .info{background:var(--acti-bg);border-top:1px solid var(--acti-b)}
+    .act .tag{background:var(--acti-b);color:var(--acti-text)}
+    .vid .info{background:var(--video-bg);border-top:1px solid var(--video-b)}
+    .vid .tag{background:var(--video-b);color:var(--video-text)}
 
-    /* رسالة فارغة */
-    .empty{padding:12px 14px; color:var(--muted); font-size:.9rem}
+    .stack{display:flex;flex-direction:column;gap:12px}
+    .mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit;cursor:pointer}
+    .mini-thumb{width:64px;height:48px;object-fit:cover;border-radius:8px;background:#ddd;flex:0 0 64px}
+    .mini .meta{font-size:.8rem;color:var(--muted)}
+    .mini.disabled{opacity:.6;cursor:not-allowed;pointer-events:none}
 
-    /* Responsive */
-    @media (max-width:1100px){ .grid-head, .lesson-grid{grid-template-columns:200px repeat(4,1fr)} }
-    @media (max-width:900px){
-      .grid-head{display:none}
-      .lesson-grid{grid-template-columns:1fr}
-      .lesson-title{margin-bottom:6px}
-    }
+    .note-warning{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:8px 10px;font-size:.85rem}
 
-    /* Footer */
+    @media (max-width:1100px){ .grid-head,.lesson-grid{grid-template-columns:200px repeat(4,1fr)} }
+    @media (max-width:900px){ .grid-head{display:none}.lesson-grid{grid-template-columns:1fr}.lesson-title{margin-bottom:6px} }
+
     footer{background:var(--green-dark);color:#fff;text-align:center;padding:22px 0;position:fixed;left:0;right:0;bottom:0;width:100%}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="logo"><span class="dades">Dades</span><span class="academy">academy</span></div>
@@ -127,9 +106,8 @@
     </div>
   </header>
 
-  <h1>Organisation des cours – SVT 3 APIC(Semestre 2)</h1>
+  <h1>Organisation des cours – SVT 3 APIC (Semestre 2)</h1>
 
-  <!-- Column Headers -->
   <div class="grid-head">
     <div class="head-cell title">Titre de la leçon</div>
     <div class="head-cell res">Résumé du cours</div>
@@ -138,183 +116,84 @@
     <div class="head-cell vid">Vidéos</div>
   </div>
 
-  <!-- Lessons Root -->
   <div id="lessons-root"></div>
 
-  <!-- ========== Data & Renderer ========== -->
   <script>
-    /*
-     * ✅ الآن: exercices و videos يدعمان عناصر متعددة مثل activities
-     * الحقول كلها اختيارية؛ اتركها فارغة وسيظهر "لاحقًا"
-     */
-    const lessons = [
-      {
-        title: "Le système nerveux",
-        resume: { file: "resume-sortie.pdf", img: "img/sortie-resume.jpg", note: "PDF – notions principales + schémas" },
-
-        /* عدة تمارين */
-        exercises: [
-          { title: "Série 1 – sortie", file: "exercices-sortie-1.pdf", img: "img/sortie-exos.jpg", meta: "PDF • 2 pages" },
-          { title: "Série 2 – analyse de données", file: "exercices-sortie-2.pdf", img: "img/sortie-exos2.jpg", meta: "PDF • 3 pages" }
-        ],
-
-        /* أنشطة متعددة */
-        activities: [
-          { title: "Activité 1 – sortie et relevés", file: "Cours sortie écologique.pdf", img: "img/sortie-activite-1.jpg", meta: "PDF • 4 pages" },
-          { title: "Activité 2 – identification d’espèces", file: "sortie-activite-2.pdf", img: "img/sortie-activite-2.jpg", meta: "PDF • 3 pages" },
-          { title: "Activité 3 – analyse des résultats", file: "sortie-activite-3.pdf", img: "img/sortie-activite-3.jpg", meta: "PDF • 2 pages" },
-        ],
-
-        /* عدة فيديوهات: mp4 و YouTube */
-        videos: [
-          { type: "file", src: "videos/sortie.mp4", poster: "seismes.jpg", title: "Sortie – Explications", note: "Durée conseillée: 8–12 min" },
-          { type: "youtube", id: "dQw4w9WgXcQ", title: "Playlist Chapitre 1", note: "YouTube" }
-        ]
-      },
-      {
-        title: "Le système musculaire",
-        resume: { file: "resume-edaphiques.pdf", img: "img/edaphiques-resume.jpg", note: "Profil de sol, texture, pH…" },
-
-        exercises: { file: "exercices-edaphiques.pdf", img: "img/edaphiques-exos.jpg", note: "QCM + exercices appliqués" }, // ✅ ستتحوّل تلقائيًا إلى لائحة بعنصر واحد
-
-        activities: [
-          { title: "Activité 1 – étude de profil", file: "CHAP. 2 FACTEURS EDAPHIQUES.pdf", img: "img/edaphiques-activite-1.jpg", meta: "PDF • 5 pages" },
-          { title: "Activité 2 – granulométrie", file: "edaphiques-activite-2.pdf", img: "img/edaphiques-activite-2.jpg", meta: "PDF • 3 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/edaphiques.mp4", poster: "img/edaphiques-video.jpg", title: "Expériences + explications", note: "Cas pratiques" }
-        ]
-      },
-      {
-        title: "Les microbes",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-      {
-        title: "Le système immunitaire",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-      {
-        title: "Dysfonctionnement du système immunitaire et problèmes d’immunité",
-        resume: { file: "resume-climatiques.pdf", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
-
-        exercises: [
-          { title: "Exercices guidés", file: "exercices-climatiques.pdf", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
-        ],
-        activities: [
-          { title: "Activité 1 – climogrammes", file: "activite-climatiques.pdf", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
-        ],
-        videos: [
-          { type: "file", src: "videos/climatiques.mp4", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
-        ]
-      },
-
-         
-
-
-    ];
-    
-
-    // ========== Helpers ==========
-    function esc(s){ return (s||"").toString().replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+    // ===== Helpers =====
+    function esc(s){ return (s||"").toString().replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[m])); }
     function imgTag(src, alt, cls="thumb"){ return src ? `<img class="${cls}" src="${esc(src)}" alt="${esc(alt||'')}" loading="lazy">` : `<div class="${cls}" style="display:flex;align-items:center;justify-content:center;color:#777">لاحقًا</div>`; }
+    function toArray(maybeArray){ if(!maybeArray) return []; return Array.isArray(maybeArray)?maybeArray:[{ title:maybeArray.title||"", file:maybeArray.file, img:maybeArray.img, meta:maybeArray.note||maybeArray.meta }]; }
+    function hasFile(path){ return !!(path && String(path).trim() !== ""); }
+    function notUploadedNote(){ return "La leçon n’a pas encore été mise en ligne par l’enseignant(e)."; }
 
-    // يحوّل كائن مفرد إلى لائحة لضمان التوافق
-    function toArray(maybeArray){
-      if (!maybeArray) return [];
-      return Array.isArray(maybeArray) ? maybeArray
-        : [ { title: maybeArray.title || "", file: maybeArray.file, img: maybeArray.img, meta: maybeArray.note || maybeArray.meta } ];
-    }
-
+    // Single PDF card (Résumé)
     function fileCard(colClass, data, tagText, lessonTitle){
-      if(!data) return `
-        <div class="cell-card ${colClass}">
-          ${imgTag(null)}
-          <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">${esc(tagText)}</div><div class="sub">لاحقًا</div></div>
-        </div>`;
+      const missing = !data || !hasFile(data.file);
+      if(missing){
+        return `
+          <div class="cell-card ${colClass}">
+            ${imgTag(data && data.img, `${tagText} – ${lessonTitle}`)}
+            <div class="info">
+              <span class="tag">${esc(lessonTitle)}</span>
+              <div class="title">${esc(tagText)}</div>
+              <div class="note-warning">${notUploadedNote()}</div>
+            </div>
+          </div>`;
+      }
       return `
-        <a class="cell-card ${colClass}" href="${esc(data.file)}" download>
+        <a class="cell-card ${colClass}" href="${esc(data.file)}" target="_blank" rel="noopener">
           ${imgTag(data.img, `${tagText} – ${lessonTitle}`)}
           <div class="info">
             <span class="tag">${esc(lessonTitle)}</span>
             <div class="title">${esc(tagText)}</div>
-            ${data.note ? `<div class="sub">${esc(data.note)}</div>` : ``}
+            ${data.note?`<div class="sub">${esc(data.note)}</div>`:''}
           </div>
         </a>`;
     }
 
-    // بطاقة لائحة PDF عامة (Exercices / Activités)
+    // List of PDFs (Exercises / Activities) with disabled empty rows
     function pdfListCard(colClass, items, coverImg, lessonTitle, heading){
       const list = toArray(items);
-      if(list.length===0){
+      const hasAnyFile = list.some(a=>hasFile(a.file));
+      const firstThumb = coverImg || (list[0] && list[0].img) || null;
+
+      const rows = list.map(a=>{
+        const label = a.title || heading;
+        const meta = a.meta ? `<div class="meta">${esc(a.meta)}</div>` : '';
+        const thumb = imgTag(a.img, label, "mini-thumb");
+        if(hasFile(a.file)){
+          return `
+            <a class="mini" href="${esc(a.file)}" target="_blank" rel="noopener">
+              ${thumb}
+              <div><div><strong>${esc(label)}</strong></div>${meta}</div>
+            </a>`;
+        }
         return `
-          <div class="cell-card ${colClass}">
-            ${imgTag(coverImg, `${heading} – ${lessonTitle}`)}
-            <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">${esc(heading)}</div><div class="sub">لاحقًا</div></div>
+          <div class="mini disabled" aria-disabled="true">
+            ${thumb}
+            <div><div><strong>${esc(label)}</strong></div><div class="meta">Non disponible pour le moment</div></div>
           </div>`;
-      }
-      const firstThumb = coverImg || list[0].img;
-      const rows = list.map(a=>`
-        <a class="mini" href="${esc(a.file)}" download>
-          ${imgTag(a.img, a.title||heading, "mini-thumb")}
-          <div>
-            <div><strong>${esc(a.title||heading)}</strong></div>
-            ${a.meta?`<div class="meta">${esc(a.meta)}</div>`:''}
-          </div>
-        </a>
-      `).join("");
+      }).join("");
+
       return `
         <div class="cell-card ${colClass}">
           ${imgTag(firstThumb, `${heading} – ${lessonTitle}`)}
           <div class="info">
             <span class="tag">${esc(lessonTitle)}</span>
             <div class="title">${esc(heading)}</div>
+            ${!hasAnyFile?`<div class="note-warning">${notUploadedNote()}</div>`:''}
             <div class="stack" style="margin-top:6px">${rows}</div>
           </div>
         </div>`;
     }
 
-    // مولّد بلاير فيديو
+    // Video player (MP4 only in-page)
     function renderPlayer(v, lessonTitle){
-      if(!v) return `<div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>`;
-      if (v.type === 'youtube'){
-        return `<div class="video-box"><iframe src="https://www.youtube.com/embed/${esc(v.id)}" title="Vidéo – ${esc(lessonTitle)}" allowfullscreen></iframe></div>`;
+      if(!v || !hasFile(v.src)){
+        return `<div class="video-box" style="display:flex;align-items:center;justify-content:center;color:#bbb">لاحقًا</div>`;
       }
       return `<div class="video-box"><video controls preload="metadata" ${v.poster?`poster="${esc(v.poster)}"`:''}><source src="${esc(v.src)}" type="video/mp4"></video></div>`;
     }
-
-    // تبديل الفيديو في نفس البطاقة
-    function playVideo(containerId, raw){
-      try{
-        const v = JSON.parse(raw);
-        const el = document.getElementById(containerId);
-        if(!el) return;
-        el.innerHTML = renderPlayer(v, v.title || "Vidéo");
-        // تمرير التركيز لتسهيل الوصول
-        const foc = el.querySelector('video,iframe');
-        if(foc) foc.focus();
-      }catch(e){}
-    }
-    window.playVideo = playVideo; // نجعلها عامة للاستخدام من ال onclick
 
     function videoListCard(videos, lessonTitle){
       const list = toArray(videos);
@@ -325,31 +204,31 @@
             <div class="info"><span class="tag">${esc(lessonTitle)}</span><div class="title">Vidéos</div><div class="sub">Aucune vidéo pour le moment</div></div>
           </div>`;
       }
-      const playerId = 'player_' + Math.random().toString(36).slice(2,9);
-      const player = renderPlayer(list[0], lessonTitle);
-      const rows = list.map((v,i)=>{
-        const payload = esc(JSON.stringify(v));
-        const isFirst = i===0;
-        const label = v.title || (v.type==='youtube' ? 'YouTube' : 'Vidéo MP4');
-        const meta = v.note || (v.type==='youtube' ? 'YouTube' : 'MP4');
-        const thumb = v.poster || v.img || (v.type==='youtube' ? `https://img.youtube.com/vi/${v.id}/hqdefault.jpg` : '');
-        // إذا كان YouTube ونبغي نفتح في تاب، نستعمل <a> بدون تبديل
-        const click = `onclick="playVideo('${playerId}','${payload}'); return false;"`;
+      const firstPlayable = list.find(v=>hasFile(v.src));
+      const player = renderPlayer(firstPlayable, lessonTitle);
+
+      const rows = list.map(v=>{
+        const label = v.title || 'Vidéo MP4';
+        const meta  = v.note  || 'MP4';
+        const thumb = v.poster || '';
+        if(hasFile(v.src)){
+          return `
+            <div class="mini" aria-label="Lire: ${esc(label)}"
+                 onclick="this.closest('.cell-card').querySelector('.video-slot').innerHTML = \`${renderPlayer(v, lessonTitle).replace(/`/g,'\\`')}\`;">
+              ${imgTag(thumb, label, "mini-thumb")}
+              <div><div><strong>${esc(label)}</strong></div><div class="meta">${esc(meta)}</div></div>
+            </div>`;
+        }
         return `
-          <a class="mini" href="#" ${click} aria-label="Lire: ${esc(label)}">
+          <div class="mini disabled" aria-disabled="true">
             ${imgTag(thumb, label, "mini-thumb")}
-            <div>
-              <div><strong>${esc(label)}</strong>${isFirst?' <span class="meta">(en cours)</span>':''}</div>
-              ${meta?`<div class="meta">${esc(meta)}</div>`:''}
-            </div>
-          </a>`;
+            <div><div><strong>${esc(label)}</strong></div><div class="meta">Non disponible pour le moment</div></div>
+          </div>`;
       }).join("");
 
       return `
         <div class="cell-card vid">
-          <div id="${playerId}">
-            ${player}
-          </div>
+          <div class="video-slot">${player}</div>
           <div class="info">
             <span class="tag">${esc(lessonTitle)}</span>
             <div class="title">Vidéos</div>
@@ -358,6 +237,78 @@
         </div>`;
     }
 
+    // ===== DATA (all paths empty as requested) =====
+    const lessons = [
+      {
+        title: "Le système nerveux",
+        resume: { file: "", img: "img/sortie-resume.jpg", note: "PDF – notions principales + schémas" },
+        exercises: [
+          { title: "Série 1 – sortie", file: "", img: "img/sortie-exos.jpg", meta: "PDF • 2 pages" },
+          { title: "Série 2 – analyse de données", file: "", img: "img/sortie-exos2.jpg", meta: "PDF • 3 pages" }
+        ],
+        activities: [
+          { title: "Activité 1 – sortie et relevés", file: "", img: "img/sortie-activite-1.jpg", meta: "PDF • 4 pages" },
+          { title: "Activité 2 – identification d’espèces", file: "", img: "img/sortie-activite-2.jpg", meta: "PDF • 3 pages" },
+          { title: "Activité 3 – analyse des résultats", file: "", img: "img/sortie-activite-3.jpg", meta: "PDF • 2 pages" },
+        ],
+        videos: [
+          { type: "file", src: "", poster: "seismes.jpg", title: "Sortie – Explications", note: "Durée conseillée: 8–12 min" }
+        ]
+      },
+      {
+        title: "Le système musculaire",
+        resume: { file: "", img: "img/edaphiques-resume.jpg", note: "Profil de sol, texture, pH…" },
+        exercises: { title: "Exercices", file: "", img: "img/edaphiques-exos.jpg", note: "QCM + exercices appliqués" },
+        activities: [
+          { title: "Activité 1 – étude de profil", file: "", img: "img/edaphiques-activite-1.jpg", meta: "PDF • 5 pages" },
+          { title: "Activité 2 – granulométrie", file: "", img: "img/edaphiques-activite-2.jpg", meta: "PDF • 3 pages" }
+        ],
+        videos: [
+          { type: "file", src: "", poster: "img/edaphiques-video.jpg", title: "Expériences + explications", note: "Cas pratiques" }
+        ]
+      },
+      {
+        title: "Les microbes",
+        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+        exercises: [
+          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+        ],
+        activities: [
+          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+        ],
+        videos: [
+          { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+        ]
+      },
+      {
+        title: "Le système immunitaire",
+        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+        exercises: [
+          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+        ],
+        activities: [
+          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+        ],
+        videos: [
+          { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+        ]
+      },
+      {
+        title: "Dysfonctionnement du système immunitaire et problèmes d’immunité",
+        resume: { file: "", img: "img/climatiques-resume.jpg", note: "Température, pluviométrie, vents…" },
+        exercises: [
+          { title: "Exercices guidés", file: "", img: "img/climatiques-exos.jpg", meta: "PDF • corrigés" }
+        ],
+        activities: [
+          { title: "Activité 1 – climogrammes", file: "", img: "img/climatiques-activite-1.jpg", meta: "PDF • 4 pages" }
+        ],
+        videos: [
+          { type: "file", src: "", poster: "img/climatiques-video.jpg", title: "Exemples réels", note: "Observation & analyse" }
+        ]
+      }
+    ];
+
+    // Render
     function renderLesson(lesson){
       const coverAct = lesson.activities && toArray(lesson.activities)[0] ? toArray(lesson.activities)[0].img : null;
       const coverExo = lesson.exercises && toArray(lesson.exercises)[0] ? toArray(lesson.exercises)[0].img : null;
@@ -365,24 +316,17 @@
         <section class="lesson" id="${esc(lesson.title).toLowerCase().replace(/\s+/g,'-')}">
           <div class="lesson-grid">
             <h2 class="lesson-title">${esc(lesson.title)}</h2>
-
             ${fileCard('res', lesson.resume, 'Résumé du cours', lesson.title)}
-
             ${pdfListCard('exo', lesson.exercises, coverExo, lesson.title, 'Exercices (PDF)')}
-
             ${pdfListCard('act', lesson.activities, coverAct, lesson.title, 'Activités (PDF)')}
-
             ${videoListCard(lesson.videos, lesson.title)}
           </div>
         </section>`;
     }
-
     const root = document.getElementById('lessons-root');
     root.innerHTML = lessons.map(renderLesson).join('');
   </script>
-    
 
-  <!-- Footer -->
   <footer>
     <div class="container"><h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4></div>
   </footer>
