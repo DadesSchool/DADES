@@ -72,39 +72,22 @@
 
         nav a:hover { opacity: 0.8; }
 
+        /* === تعديل أساسي لوسط الأزرار === */
         .main-container {
             flex: 1;
-            padding: 120px 20px 80px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .image-container {
-            border: none; /* إزالة الحاجز الأزرق */
-            border-radius: 0; /* إزالة أي حواف دائرية */
-            padding: 0; /* إزالة المساحة الإضافية */
-            background: none; /* إزالة الخلفية */
-            box-shadow: none; /* إزالة الظل */
-        }
-
-        .image-container img {
-            width: 100%;
-            max-width: 400px;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* وسط عمودياً */
+            align-items: center;      /* وسط أفقياً */
+            text-align: center;
+            padding: 20px;
         }
 
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            margin-top: 30px;
         }
 
         button {
@@ -137,19 +120,7 @@
         }
 
         @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .image-container {
-                order: 1;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
             .buttons {
-                order: 2;
                 align-items: center;
             }
         }
@@ -166,7 +137,7 @@
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="1ac.html">Cours Collège</a></li>
                     <li><a href="hj.html">Cours Lycée</a></li>
-                    <li><a href="ajrada.html">cours en LIVE</a></li>
+                    <li><a href="ajrada.html">Cours en LIVE</a></li>
                 </ul>
             </nav>
         </div>
@@ -175,13 +146,11 @@
     <div class="main-container">
         <h1>Bienvenue dans notre site web</h1>
         <p>Choisissez un niveau</p>
-        
 
-            <div class="buttons">
-                <button onclick="window.location.href='se.html'">1 Année Collège</button>
-                <button onclick="window.location.href='th.html'">2 Année Collège</button>
-                <button onclick="window.location.href='gh.html'">3 Année Collège</button>
-            </div>
+        <div class="buttons">
+            <button onclick="window.location.href='se.html'">1 Année Collège</button>
+            <button onclick="window.location.href='th.html'">2 Année Collège</button>
+            <button onclick="window.location.href='gh.html'">3 Année Collège</button>
         </div>
     </div>
 
@@ -192,4 +161,3 @@
     </footer>
 </body>
 </html>
-
