@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Dades</title>
+    <link rel="icon" type="image/png" href="PP.png">
+
+    <!-- ===== Google Analytics ===== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,44 +14,184 @@
       gtag('js', new Date());
       gtag('config', 'G-VW9BXMFMBP');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="PP.png">
-    <title>Mohamed Dades</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ===== CSS داخلي ===== -->
+    <style>
+        /* Reset CSS */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        /* ألوان الموقع */
+:root {
+    --primary-color: #28a745; /* أخضر عصري */
+    --secondary-color: #ffffff; /* أبيض للنص */
+    --accent-color: #f9f9f9; /* خلفية خفيفة */
+    --text-color: #333333; /* نص داكن */
+    --button-color: #28a745;
+    --button-hover: #218838; /* أخضر أغمق عند المرور */
+}
+
+
+        body { background-color: var(--accent-color); color: var(--text-color); }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+
+        .logo img { height: 50px; }
+
+        .revision-button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .revision-button:hover {
+            background-color: var(--button-hover);
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { text-decoration: underline; }
+
+        /* Intro Section */
+        h1 {
+            text-align: center;
+            margin: 40px 0 15px;
+            color: var(--primary-color);
+            font-size: 2.5em;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        /* Media Section */
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .media-section .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .media-section .buttons button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background-color: var(--button-color);
+            color: var(--secondary-color);
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .media-section .buttons button:hover {
+            background-color: var(--button-hover);
+        }
+
+        .video-container { width: 100%; max-width: 720px; }
+
+        .video-container video { width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        footer h4 { margin-bottom: 10px; font-weight: 600; }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            header .container { flex-direction: column; gap: 15px; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .media-section .buttons { flex-direction: column; gap: 12px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Barre d'accueil -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <img src="D (3) (1).png" alt="Logo Dades Academy" class="logo-img">
-                <button class="revision-button" onclick="window.location.href='html/revision.html'">Préparation Examen régional</button><button class="revision-button" onclick="window.location.href='html/yol.html'">Prépa CC2S2</button>
+                <img src="D (3) (1).png" alt="Logo Dades Academy">
+                <button class="revision-button" onclick="window.location.href='html/revision.html'">Préparation Examen régional</button>
+                <button class="revision-button" onclick="window.location.href='html/yol.html'">Prépa CC2S2</button>
             </div>
-
             <nav>
                 <ul>
                     <li><a href="">Accueil</a></li>
                     <li><a href="html/1ac.html">Cours Collège</a></li>
                     <li><a href="html/hj.html">Cours Lycée</a></li>
-                    <li><a href="html/ajrada.html">cours en LIVE</a></li>
+                    <li><a href="html/ajrada.html">Cours en LIVE</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Section d'introduction -->
-    <h1>Bienvenue dans notre site web</h1>
-    <p>Vous pouvez facilement consulter les leçons du Collège et du Lycée selon le programme marocain.</p>
-    <p>Dadesacademy, votre plateforme éducative dédiée à l'enseignement des Sciences de la Vie et de la Terre (SVT).</p>
+    <!-- Intro Section -->
+    <section>
+        <h1>Bienvenue dans notre site web</h1>
+        <p>Vous pouvez facilement consulter les leçons du Collège et du Lycée selon le programme marocain.</p>
+        <p>Dadesacademy, votre plateforme éducative dédiée à l'enseignement des Sciences de la Vie et de la Terre (SVT).</p>
+    </section>
 
-    <!-- Section boutons et vidéo -->
+    <!-- Media Section -->
     <section class="media-section">
         <div class="buttons">
-            <button onclick="window.location.href='html/hj.html'">Cliquez ici pour consulter les leçons du lycée</button>
-            <button onclick="window.location.href='html/1ac.html'">Cliquez ici pour consulter les leçons du collège</button>
-            <button onclick="window.location.href='html/ajrada.html'">Cliquez ici pour consulter les cours en LIVE</button>
+            <button onclick="window.location.href='html/hj.html'">Leçons Lycée</button>
+            <button onclick="window.location.href='html/1ac.html'">Leçons Collège</button>
+            <button onclick="window.location.href='html/ajrada.html'">Cours en LIVE</button>
         </div>
 
         <div class="video-container">
@@ -70,3 +215,5 @@
 
 </body>
 </html>
+
+
