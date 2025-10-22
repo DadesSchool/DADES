@@ -1,70 +1,208 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Dades</title>
+<link rel="icon" type="image/png" href="PP.png">
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-VW9BXMFMBP');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="PP.png">
-    <title>Mohamed Dades</title>
-    <link rel="stylesheet" href="styles2.css">
+
+<style>
+/* Reset أساسي */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e9f5ec, #d2f4e0);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header عصري */
+header {
+    background-color: #2e7d32;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.logo .dades { color: #fff; }
+.logo .academy { color: #a5e6b5; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+nav ul li a:hover {
+    color: #c8f7d4;
+    transform: translateY(-2px);
+}
+
+/* محتوى مركزي */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 160px 20px 80px;
+}
+
+main h1 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #2e7d32;
+}
+
+main p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* أزرار جذابة */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.button-container button {
+    background-color: #43a047;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 30px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+.button-container button img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+.button-container button p {
+    margin-top: 5px;
+    font-weight: 500;
+}
+.button-container button:hover {
+    background-color: #2e7d32;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer عصري */
+footer {
+    background-color: #2e7d32;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 0.95em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+    }
+    .button-container button {
+        width: 70%;
+        margin: auto;
+    }
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
 </head>
 <body>
 
-    <!-- Barre d'accueil -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <span class="dades">Dades</span><span class="academy">academy</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="1ac.html">Cours Collège</a></li>
-                    <li><a href="hj.html">Cours Lycée</a></li>
-                    <li><a href="ajrada.html">cours en LIVE</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container">
+        <div class="logo">
+            <span class="dades">Dades</span><span class="academy">academy</span>
         </div>
-    </header>
-             <h1>Bienvenue dans notre site web</h1>
-            
-             <p>
-                
-                
-                <div class="button-container">
-                    <button onclick="window.location.href = 'dd.html';">
-                        <img src="SEM.png" alt="Icon 2"> 
-                        <p>
-                            Semestre 1</p>
-                    </button>
-                    <button onclick="window.location.href = 'aa.html';">
-                        <img src="smmm.png" alt="Icon 2">
-                        <p>Semestre 2</p>
-                    </button>
-                    
-                </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="1ac.html">Cours Collège</a></li>
+                <li><a href="hj.html">Cours Lycée</a></li>
+                <li><a href="ajrada.html">Cours en LIVE</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-             </div>
-    </section>
+<main>
+    <h1>Bienvenue dans notre site web</h1>
+    <p>Choisissez votre semestre pour commencer votre apprentissage.</p>
 
-    <footer>
-        
-            
-        <div class="container">
-            <h4>&copy;
-              
-                2024 Mohamed Dades - Tous droits réservés®.</h4>
-        </div>
-    </footer>
+    <div class="button-container">
+        <button onclick="window.location.href='dd.html';">
+            <img src="SEM.png" alt="Semestre 1">
+            <p>Semestre 1</p>
+        </button>
+        <button onclick="window.location.href='aa.html';">
+            <img src="smmm.png" alt="Semestre 2">
+            <p>Semestre 2</p>
+        </button>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+    </div>
+</footer>
 
 </body>
 </html>
-
