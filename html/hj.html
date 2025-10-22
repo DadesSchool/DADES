@@ -1,84 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DadesSchool</title>
+<link rel="icon" type="image/png" href="PP.png">
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-VW9BXMFMBP');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="PP.png">
-    <title>DadesSchool</title>
-    <link rel="stylesheet" href="lk.css">
-</head>
-<body>
-
-    <!-- Barre d'accueil -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <span class="dades">Dades</span><span class="academy">academy</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="1ac.html">Cours Collège</a></li>
-                    <li><a href="hj.html">Cours Lycée</a></li>
-                    <li><a href="ajrada.html">cours en LIVE</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Section principale -->
-    <div class="main-container">
-        <h1>Bienvenue dans notre site web</h1>
-        <p>Choisissez un niveau</p>
-        <div class="content">
-            <!-- Boutons -->
-            <div class="buttons">
-                <button onclick="window.location.href = 'ui.html';">Tronc commun</button>
-                <button onclick="window.location.href = 'bu.html';">1 BAC</button>
-            </div>
-
-            <!-- Image avec lien -->
-            <div class="image-container">
-                <img src="" alt="">
-                <p><a href="" target="_blank"></a></p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
-        </div>
-    </footer>
 
 <style>
-    html, body {
-        height: 100%;
+    * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #e9f5ec, #d2f4e0);
+        color: #333;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        min-height: 100vh;
     }
 
     header {
-        background-color: #4aac71;
+        background-color: #2e7d32;
         color: #fff;
-        padding: 15px 0;
-        text-align: center;
         width: 100%;
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
+    header .container {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+    }
+
+    .logo {
+        font-size: 1.6em;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .dades { color: #fff; }
+    .academy { color: #a5e6b5; }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover { color: #a5e6b5; }
 
     .main-container {
         flex: 1;
@@ -87,52 +82,128 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 100%;
-        padding-top: 100px;
+        padding: 120px 20px 80px;
+        position: relative;
     }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+    .main-container p {
+        font-size: 1.2em;
+        margin-bottom: 35px;
+        color: #555;
+        z-index: 2;
+        position: relative;
     }
 
     .buttons {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .image-container {
-        display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        gap: 20px;
+        z-index: 2;
+        position: relative;
     }
 
-    .image-container img {
-        max-width: 300px;
+    button {
+        background-color: #43a047;
+        color: white;
+        border: none;
+        padding: 14px 35px;
+        font-size: 1em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+        background-color: #2e7d32;
+        transform: translateY(-3px);
+    }
+
+    /* صورة احترافية أسفل اليسار دون لمس الفوتر */
+    .corner-image {
+        position: fixed;
+        bottom: 60px;      /* ترك مسافة 60px عن الفوتر */
+        left: 0;
+        width: 25vw;
+        max-width: 350px;
         height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0.35;
+        z-index: 0;
+        pointer-events: none;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    body:hover .corner-image {
+        transform: scale(1.05) rotate(-1deg);
+        opacity: 0.4;
     }
 
     footer {
-        background-color: #026502;
+        background-color: #2e7d32;
         color: #fff;
         text-align: center;
-        padding: 20px 0;
+        padding: 18px 10px;
         width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+        .logo { font-size: 1.3em; }
+        nav ul { 
+            flex-direction: column;
+            background-color: #388e3c;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            display: none;
+        }
+        .corner-image {
+            width: 40vw;
+            max-width: 220px;
+            opacity: 0.3;
+            bottom: 50px; /* مسافة أقل على الشاشات الصغيرة */
+        }
     }
 </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <span class="dades">Dades</span><span class="academy">academy</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="1ac.html">Cours Collège</a></li>
+                <li><a href="hj.html">Cours Lycée</a></li>
+                <li><a href="ajrada.html">Cours en LIVE</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-container">
+    <p>Choisissez votre niveau pour commencer votre apprentissage</p>
+
+    <div class="buttons">
+        <button onclick="window.location.href='ui.html'">Tronc commun</button>
+        <button onclick="window.location.href='bu.html'">1 BAC</button>
+    </div>
+
+    <!-- صورة كبيرة أسفل اليسار -->
+    <img src="eee.png" alt="Décoration" class="corner-image">
+</main>
+
+<footer>
+    <div class="container">
+        <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+    </div>
+</footer>
 
 </body>
 </html>
-
-
