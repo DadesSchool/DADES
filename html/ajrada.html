@@ -1,160 +1,181 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW9BXMFMBP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VW9BXMFMBP');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="PP.png">
-    <title>Mohamed Dades</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dades Academy – Portail Officiel</title>
+<link rel="icon" type="image/png" href="PP.png">
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-image: url("A_serene_nature-inspired_image_for_a_biology-theme.jpg");
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
 
-        header {
-            background-color: #4aac71;
-            color: #fff;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+body {
+  background: linear-gradient(135deg, #e7f5ec 0%, #b2f0d5 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+/* ===== HEADER ===== */
+header {
+  background: #228b22;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
+header .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+}
 
-        .dades { color: #007bff; }
-        .academy { color: #fff; }
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+.logo .dades { color: #fff; }
+.logo .academy { color: #c8f7d4; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
 
-        nav a:hover { opacity: 0.8; }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-        .main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* وسط عمودياً */
-            align-items: center;     /* وسط أفقياً */
-            text-align: center;
-            padding: 20px;
-        }
+nav a:hover {
+  color: #b9ffd0;
+  transform: translateY(-2px);
+}
 
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
+/* ===== MAIN SECTION ===== */
+.main-container {
+  margin-top: 150px;
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+}
 
-        button {
-            background: #F44336;
-            color: white;
-            border: 3px solid #8B0000;
-            padding: 20px 40px;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 300px;
-        }
+.main-container p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
 
-        button:hover {
-            transform: scale(1.05);
-            background: #d32f2f;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
+/* ===== BUTTON ===== */
+.button-link button {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        footer {
-            background: #026502;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+.button-link button:hover {
+  background: linear-gradient(135deg, #43a047, #1b5e20);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 25px rgba(0,0,0,0.25);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #145a32;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-container {
+    margin: 130px 15px 80px;
+    padding: 40px 25px;
+  }
+
+  .button-link button {
+    width: 90%;
+  }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <span class="dades">Dades</span><span class="academy">academy</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="1ac.html">Cours Collège</a></li>
-                    <li><a href="hj.html">Cours Lycée</a></li>
-                    <li><a href="ajrada.html">cours en LIVE</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <div class="main-container">
-        <h1>Bienvenue dans notre site web</h1>
-        <p>Choisissez un niveau</p>
-
-        <div class="buttons">
-            <button onclick="window.location.href = '1ack.html';">1 Année Collège</button>
-            <button onclick="window.location.href = 'yy.html';">2 Année Collège</button>
-            <button onclick="window.location.href = 'nb.html';">3 Année Collège</button>
-            <button onclick="window.location.href = 'vv.html';">Tronc commun</button>
-        </div>
+<header>
+  <div class="container">
+    <div class="logo">
+      <span class="dades">Dades</span><span class="academy">academy</span>
     </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="1ac.html">Cours Collège</a></li>
+        <li><a href="hj.html">Cours Lycée</a></li>
+        <li><a href="ajrada.html">Cours en LIVE</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <footer>
-        <div class="container">
-            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
-        </div>
-    </footer>
+<main class="main-container">
+  <p>
+    Découvrez notre nouvelle plateforme d'apprentissage moderne et interactive.  
+    Accédez à tous les cours, ressources et vidéos en ligne sur le nouveau portail officiel.
+  </p>
+
+  <a href="https://xn--oprationnel-cbb.net/login.php" target="_blank" class="button-link">
+    <button>Visiter la nouvelle plateforme</button>
+  </a>
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2024 Mohamed Dades – Tous droits réservés®.
+  </div>
+</footer>
+
 </body>
 </html>
+
+
 
 
 
