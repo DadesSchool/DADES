@@ -231,8 +231,8 @@ exercises:[
   {title:"Série 1",file:"série1dexercices de la sensibilite consciente.pdf"},
   {title:"Série 2",file:"Sérire 2.pdf"}
 ],
-activities:[
-  {title:"Activité 1",file:""},
+Solutions:[
+  {title:"Solution série 1",file:"série1dexercices de la sensibilite consciente_correction.pdf"},
   {title:"Activité 2",file:""}
 ],
 videos:[
@@ -254,7 +254,7 @@ exercises:[
   {title:"Exercice 1",file:""},
   {title:"Exercice 2",file:""}
 ],
-activities:[
+Solutions:[
   {title:"Activité 1",file:""},
   {title:"Activité 2",file:""}
 ],
@@ -290,7 +290,7 @@ exercises:[
   {title:"Exercice 1",file:""},
   {title:"Exercice 2",file:""}
 ],
-activities:[
+Solutions:[
   {title:"Activité 1",file:""},
   {title:"Activité 2",file:""}
 ],
@@ -313,7 +313,7 @@ exercises:[
   {title:"Exercice 1",file:""},
   {title:"Exercice 2",file:""}
 ],
-activities:[
+Solutions:[
   {title:"Activité 1",file:""},
   {title:"Activité 2",file:""}
 ],
@@ -336,7 +336,7 @@ exercises:[
   {title:"Exercice 1",file:""},
   {title:"Exercice 2",file:""}
 ],
-activities:[
+Solutions:[
   {title:"Activité 1",file:""},
   {title:"Activité 2",file:""}
 ],
@@ -355,7 +355,7 @@ return `
     <h2 class="lesson-title">${l.title}</h2>
     ${listCard('res',l.resume,l.title,'cours')}
     ${listCard('exo',l.exercises,l.title,'Exercices')}
-    ${listCard('act',l.activities,l.title,'Solutions')}
+    ${listCard('act',l.Solutions,l.title,'Solutions')}
     ${videoCard(l.videos,l.title)}
   </div>
 </section>`
