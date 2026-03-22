@@ -1,155 +1,375 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dades academy – SVT 3APIC Semestre 1</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dades academy – SVT</title>
+
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:Arial,sans-serif;background:#fff;color:#111;padding-bottom:90px;}
-  header{background:#4aac71;color:#fff;padding:10px 0;}
-  .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;}
-  .logo{font-weight:bold;font-size:1.5rem;}
-  .logo .dades{color:#007bff;}
-  .logo .academy{color:#fff;}
-  nav ul{list-style:none;display:flex;gap:20px;}
-  nav a{color:#fff;text-decoration:none;}
-  nav a:hover{color:#e5e5e5;}
-  h1{text-align:center;margin:20px;}
-  .grid-head{max-width:1200px;margin:8px auto;padding:0 20px;display:grid;grid-template-columns:240px repeat(4,1fr);gap:18px;position:sticky;top:0;z-index:5;}
-  .head-cell{background:#fff;border-radius:12px;border:1px solid #e3eee7;text-align:center;font-weight:700;padding:10px 8px;box-shadow:0 3px 16px rgba(0,0,0,.05);}
-  .head-cell.title{background:transparent;border:none;box-shadow:none;text-align:left;padding-left:0;color:#6b7280;}
-  .lesson{max-width:1200px;margin:18px auto;padding:0 20px;}
-  .lesson-grid{display:grid;grid-template-columns:240px repeat(4,1fr);gap:18px;align-items:start;}
-  .lesson-title{font-weight:800;color:#155b31;padding:12px 0;border-left:6px solid #4aac71;padding-left:10px;}
-  .cell-card{border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e3eee7;box-shadow:0 4px 18px rgba(0,0,0,.06);display:flex;flex-direction:column;min-height:100%;text-decoration:none;color:inherit;}
-  .mini{display:flex;gap:10px;align-items:center;margin:5px 0;}
-  .mini-thumb{width:64px;height:48px;object-fit:cover;border-radius:8px;background:#ddd;flex:0 0 64px;}
-  .info{padding:10px;display:flex;flex-direction:column;gap:6px;}
-  .tag{font-size:.78rem;font-weight:700;display:inline-block;padding:4px 8px;border-radius:999px;}
-  .title{font-weight:700;font-size:.98rem;}
-  .meta{font-size:.8rem;color:#6b7280;}
-  footer{background:#026502;color:#fff;text-align:center;padding:22px 0;position:fixed;bottom:0;width:100%;}
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --green:#4aac71;
+  --green-dark:#026502;
+  --soft-b:#e3eee7;
+  --resume-bg:#f3e5f5;
+  --exo-bg:#e8f5e9;
+  --acti-bg:#fff3e0;
+  --video-bg:#e3f2fd;
+  --maxw:1200px;
+  --gap:18px;
+}
+
+/* 🌿 خلفية مريحة */
+body{
+  font-family:'Segoe UI',Tahoma,sans-serif;
+  background:#f4f7f6;
+  color:#111;
+  padding-bottom:80px;
+}
+
+/* 🔝 الهيدر */
+header{
+  background:var(--green);
+  color:#fff;
+  padding:10px;
+}
+.container{
+  max-width:var(--maxw);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* 📌 العنوان */
+h1{
+  text-align:center;
+  margin:20px;
+}
+
+/* 📦 الدروس */
+.lesson{
+  max-width:var(--maxw);
+  margin:20px auto;
+  padding:0 20px;
+}
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:240px repeat(4,1fr);
+  gap:var(--gap);
+}
+
+/* عنوان الدرس */
+.lesson-title{
+  font-weight:bold;
+  color:#155b31;
+  border-left:5px solid var(--green);
+  padding-left:10px;
+}
+
+/* 🧱 الكروت */
+.cell-card{
+  border:1px solid var(--soft-b);
+  border-radius:14px;
+  padding:14px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  transition:.2s;
+}
+
+.cell-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* 🏷️ */
+.tag{
+  font-size:.8rem;
+  color:#666;
+  margin-bottom:4px;
+}
+
+/* عنوان العمود */
+.cell-card strong{
+  display:block;
+  margin:6px 0 10px;
+  font-size:.95rem;
+  color:#222;
+  border-bottom:1px solid #eee;
+  padding-bottom:4px;
+}
+
+/* 📜 قائمة */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-height:220px;
+  overflow-y:auto;
+  padding-right:4px;
+}
+
+/* 📄 عنصر */
+.mini{
+  padding:8px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#111;
+  display:block;
+  font-size:.9rem;
+  background:#fafafa;
+  border:1px solid #eee;
+  transition:.2s;
+}
+
+.mini:hover{
+  background:#eaf4ff;
+  border-color:#cfe3ff;
+  transform:translateX(4px);
+}
+
+/* ❌ غير متاح */
+.mini.disabled{
+  opacity:.5;
+  pointer-events:none;
+}
+
+/* 🎨 ألوان الأعمدة */
+.res{background:var(--resume-bg)}
+.exo{background:var(--exo-bg)}
+.act{background:var(--acti-bg)}
+.vid{background:var(--video-bg)}
+
+/* 📱 responsive */
+@media(max-width:900px){
+  .lesson-grid{grid-template-columns:1fr}
+}
+
+/* 🔻 footer */
+footer{
+  background:var(--green-dark);
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="container">
-    <div class="logo"><span class="dades">Dades</span><span class="academy">academy</span></div>
-    <nav>
-      <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Cours Collège</a></li>
-        <li><a href="#">Cours Lycée</a></li>
-        <li><a href="#">Cours en LIVE</a></li>
-      </ul>
-    </nav>
+    <div><strong>Dades academy</strong></div>
   </div>
 </header>
 
-<h1>Organisation des cours – SVT 3APIC Semestre 1</h1>
+<h1>Organisation des cours – SVT</h1>
 
-<div class="grid-head">
-  <div class="head-cell title">Titre de la leçon</div>
-  <div class="head-cell res">Résumé</div>
-  <div class="head-cell exo">Exercices</div>
-  <div class="head-cell act">Activités</div>
-  <div class="head-cell vid">Vidéos</div>
-</div>
-
-<div id="lessons-root"></div>
+<div id="root"></div>
 
 <script>
-const lessons = [
-  {
-    title: "La digestion des aliments et l’absorption intestinale",
-    resume:[{title:"Chapitre 1_3AC",file:"Partie 1 Cours 3AC.pdf", img:"deg.jpg", meta:"PDF 2 pages"},
-           {title:"Résumé de Cours 3AC",file:"Fiches de révision Fonctions nutritions avec réponses.pdf", img:"deg.jpg", meta:"PDF 16 pages"}
-           ],
-    exercises:[{title:"Exercices digestion", file:"Exercices partie 1.pdf", img:"deg.jpg", meta:"PDF 26 pages"}],
-    activities:[{title:"Activités Fonctions de nutrition", file:"", img:"deg.jpg", meta:"PDF 4 pages"}],
-    videos:[{title:"Digestion et absorption", link:"", img:"deg.jpg", meta:"Vidéo"}]
-  },
-  {
-    title: "Éducation nutritionnelle et hygiène de l’appareil digestif",
-    resume:[{title:"Chapitre 2", file:"Education nutritionnelle.pdf", img:"hg.jpg", meta:"PDF 8 pages"}],
-    exercises:[{title:"Exercices carences et rations", file:"Exercices partie 1.pdf", img:"hg.jpg", meta:"PDF 2 pages"}],
-    activities:[{title:"Activités sur la malnutrition", file:"", img:"hg.jpg", meta:"PDF 5 pages"}],
-    videos:[{title:"Expériences + explications", link:"", img:"hg.jpg", meta:"Vidéo"}]
-  },
-  {
-    title: "La respiration chez l’Homme",
-    resume:[{title:"Résumé respiration", file:"", img:"res.jpg", meta:""}],
-    exercises:[{title:"Exercices guidés", file:"", img:"res.jpg", meta:"PDF corrigés"}],
-    activities:[{title:"Activité climogrammes", file:"", img:"res.jpg", meta:"PDF 4 pages"}],
-    videos:[{title:"Exemples réels", link:"", img:"res.jpg", meta:"Vidéo"}]
-  },
-  {
-    title: "Le sang et la circulation sanguine chez l’Homme",
-    resume:[{title:"Résumé sang", file:"", img:"sc.jpg", meta:""}],
-    exercises:[{title:"Exercices guidés", file:"", img:"sc.jpg", meta:"PDF corrigés"}],
-    activities:[{title:"Activité climogrammes", file:"", img:"sc.jpg", meta:"PDF 4 pages"}],
-    videos:[{title:"Exemples réels", link:"", img:"sc.jpg", meta:"Vidéo"}]
-  },
-  {
-    title: "L’excrétion urinaire chez l’Homme",
-    resume:[{title:"Résumé excrétion", file:"", img:"pi.jpg", meta:""}],
-    exercises:[{title:"Exercices guidés", file:"", img:"pi.jpg", meta:"PDF corrigés"}],
-    activities:[{title:"Activité climogrammes", file:"", img:"pi.jpg", meta:"PDF 4 pages"}],
-    videos:[{title:"Exemples réels", link:"", img:"pi.jpg", meta:"Vidéo"}]
-  }
-];
+// ===== Helpers =====
+function esc(s){return (s||"").replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function hasFile(f){return f && f.trim()!==""}
+function toArray(a){return Array.isArray(a)?a:(a?[a]:[])}
 
-function renderLesson(lesson){
-  return `
-    <section class="lesson">
-      <div class="lesson-grid">
-        <h2 class="lesson-title">${lesson.title}</h2>
-        ${renderCol("res", lesson.resume)}
-        ${renderCol("exo", lesson.exercises)}
-        ${renderCol("act", lesson.activities)}
-        ${renderCol("vid", lesson.videos, true)}
-      </div>
-    </section>
-  `;
-}
+// ===== Card List =====
+function listCard(cls, items, lessonTitle, title){
+  const list = toArray(items)
 
-function renderCol(cls, items, isVideo=false){
-  if(!items || items.length===0){
-    return `<div class="cell-card ${cls}"><div class="info"><div class="note-warning">Pas de contenu</div></div></div>`;
-  }
-  const cards = items.map(i=>{
-    if(isVideo){
-      return `<a href="${i.link}" target="_blank" class="mini">
-                <img src="${i.img}" class="mini-thumb"/>
-                <div><div><strong>${i.title}</strong></div><div class="meta">${i.meta}</div></div>
-              </a>`;
+  const rows = list.map(i=>{
+    if(hasFile(i.file)){
+      return `<a class="mini" href="${esc(i.file)}" target="_blank">${esc(i.title||title)}</a>`
     }
-    return `<a href="${i.file}" target="_blank" class="mini">
-              <img src="${i.img}" class="mini-thumb"/>
-              <div><div><strong>${i.title}</strong></div><div class="meta">${i.meta}</div></div>
-            </a>`;
-  }).join('');
-  return `<div class="cell-card ${cls}"><div class="info"><div class="stack">${cards}</div></div></div>`;
+    return `<div class="mini disabled">${esc(i.title||title)} (Non disponible)</div>`
+  }).join("")
+
+  return `
+  <div class="cell-card ${cls}">
+    <div class="tag">${lessonTitle}</div>
+    <strong>${title}</strong>
+    <div class="stack">${rows}</div>
+  </div>`
 }
 
-document.getElementById("lessons-root").innerHTML = lessons.map(renderLesson).join('');
+// ===== Video =====
+function videoCard(videos, lessonTitle){
+  const list = toArray(videos)
+
+  const rows = list.map(v=>{
+    if(hasFile(v.src)){
+      return `<a class="mini" href="${esc(v.src)}" target="_blank">${esc(v.title||"Vidéo")}</a>`
+    }
+    return `<div class="mini disabled">${esc(v.title||"Vidéo")} (Non disponible)</div>`
+  }).join("")
+
+  return `
+  <div class="cell-card vid">
+    <div class="tag">${lessonTitle}</div>
+    <strong>Vidéos</strong>
+    <div class="stack">${rows}</div>
+  </div>`
+}
+
+// ===== DATA =====
+const lessons = [
+{
+title:"La digestion des aliments et l’absorption intestinale",
+resume:[
+  {title:"cours 1",file:"Partie 1 Cours 3AC.pdf"},
+  {title:"cours 2",file:"Fiches de révision Fonctions nutritions avec réponses.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:"Exercices partie 1.pdf"},
+  {title:"Exercice 2",file:""}
+],
+activities:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"Éducation nutritionnelle et hygiène de l’appareil digestif",
+resume:[
+  {title:"cours 1",file:"Education nutritionnelle.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:"Exercices partie 1.pdf"},
+  {title:"Exercice 2",file:""}
+],
+activities:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+} ,
+ {
+title:"Models du controle 1",
+resume:[
+  {title:"Model 1",file:"file1.pdf"},
+  {title:"Model 2",file:"file2.pdf"},
+  {title:"Model 3",file:""},
+  {title:"Model 4",file:""},
+  {title:"Model 5",file:""},
+  {title:"Model 6",file:""}
+],
+
+},
+
+ {
+title:"La respiration chez l’Homme",
+resume:[
+  {title:"cours 1",file:"file1.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+activities:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"Le sang et la circulation sanguine chez l’Homme",
+resume:[
+  {title:"cours 1",file:"file1.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+activities:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"L’excrétion urinaire chez l’Homme",
+resume:[
+  {title:"cours 1",file:"file1.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+activities:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+
+
+]
+
+// ===== Render =====
+function renderLesson(l){
+return `
+<section class="lesson">
+  <div class="lesson-grid">
+    <h2 class="lesson-title">${l.title}</h2>
+    ${listCard('res',l.resume,l.title,'cours')}
+    ${listCard('exo',l.exercises,l.title,'Exercices')}
+    ${listCard('act',l.activities,l.title,'Solutions')}
+    ${videoCard(l.videos,l.title)}
+  </div>
+</section>`
+}
+
+document.getElementById("root").innerHTML = lessons.map(renderLesson).join("")
 </script>
 
-<footer>
-  <div class="container">&copy; 2025 Dades academy – Tous droits réservés</div>
-</footer>
+<footer>© 2024 Dades</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
