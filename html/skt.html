@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dades academy – SVT</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --green:#4aac71;
+  --green-dark:#026502;
+  --soft-b:#e3eee7;
+  --resume-bg:#f3e5f5;
+  --exo-bg:#e8f5e9;
+  --acti-bg:#fff3e0;
+  --video-bg:#e3f2fd;
+  --maxw:1200px;
+  --gap:18px;
+}
+
+/* 🌿 خلفية مريحة */
+body{
+  font-family:'Segoe UI',Tahoma,sans-serif;
+  background:#f4f7f6;
+  color:#111;
+  padding-bottom:80px;
+}
+
+/* 🔝 الهيدر */
+header{
+  background:var(--green);
+  color:#fff;
+  padding:10px;
+}
+.container{
+  max-width:var(--maxw);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* 📌 العنوان */
+h1{
+  text-align:center;
+  margin:20px;
+}
+
+/* 📦 الدروس */
+.lesson{
+  max-width:var(--maxw);
+  margin:20px auto;
+  padding:0 20px;
+}
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:240px repeat(4,1fr);
+  gap:var(--gap);
+}
+
+/* عنوان الدرس */
+.lesson-title{
+  font-weight:bold;
+  color:#155b31;
+  border-left:5px solid var(--green);
+  padding-left:10px;
+}
+
+/* 🧱 الكروت */
+.cell-card{
+  border:1px solid var(--soft-b);
+  border-radius:14px;
+  padding:14px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  transition:.2s;
+}
+
+.cell-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* 🏷️ */
+.tag{
+  font-size:.8rem;
+  color:#666;
+  margin-bottom:4px;
+}
+
+/* عنوان العمود */
+.cell-card strong{
+  display:block;
+  margin:6px 0 10px;
+  font-size:.95rem;
+  color:#222;
+  border-bottom:1px solid #eee;
+  padding-bottom:4px;
+}
+
+/* 📜 قائمة */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-height:220px;
+  overflow-y:auto;
+  padding-right:4px;
+}
+
+/* 📄 عنصر */
+.mini{
+  padding:8px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#111;
+  display:block;
+  font-size:.9rem;
+  background:#fafafa;
+  border:1px solid #eee;
+  transition:.2s;
+}
+
+.mini:hover{
+  background:#eaf4ff;
+  border-color:#cfe3ff;
+  transform:translateX(4px);
+}
+
+/* ❌ غير متاح */
+.mini.disabled{
+  opacity:.5;
+  pointer-events:none;
+}
+
+/* 🎨 ألوان الأعمدة */
+.res{background:var(--resume-bg)}
+.exo{background:var(--exo-bg)}
+.act{background:var(--acti-bg)}
+.vid{background:var(--video-bg)}
+
+/* 📱 responsive */
+@media(max-width:900px){
+  .lesson-grid{grid-template-columns:1fr}
+}
+
+/* 🔻 footer */
+footer{
+  background:var(--green-dark);
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div><strong>Dades academy</strong></div>
+  </div>
+</header>
+
+<h1>Organisation des cours – SVT</h1>
+
+<div id="root"></div>
+
+<script>
+// ===== Helpers =====
+function esc(s){return (s||"").replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function hasFile(f){return f && f.trim()!==""}
+function toArray(a){return Array.isArray(a)?a:(a?[a]:[])}
+
+// ===== Card List =====
+function listCard(cls, items, lessonTitle, title){
+  const list = toArray(items)
+
+  const rows = list.map(i=>{
+    if(hasFile(i.file)){
+      return `<a class="mini" href="${esc(i.file)}" target="_blank">${esc(i.title||title)}</a>`
+    }
+    return `<div class="mini disabled">${esc(i.title||title)} (Non disponible)</div>`
+  }).join("")
+
+  return `
+  <div class="cell-card ${cls}">
+    <div class="tag">${lessonTitle}</div>
+    <strong>${title}</strong>
+    <div class="stack">${rows}</div>
+  </div>`
+}
+
+// ===== Video =====
+function videoCard(videos, lessonTitle){
+  const list = toArray(videos)
+
+  const rows = list.map(v=>{
+    if(hasFile(v.src)){
+      return `<a class="mini" href="${esc(v.src)}" target="_blank">${esc(v.title||"Vidéo")}</a>`
+    }
+    return `<div class="mini disabled">${esc(v.title||"Vidéo")} (Non disponible)</div>`
+  }).join("")
+
+  return `
+  <div class="cell-card vid">
+    <div class="tag">${lessonTitle}</div>
+    <strong>Vidéos</strong>
+    <div class="stack">${rows}</div>
+  </div>`
+}
+
+// ===== DATA =====
+const lessons = [
+{
+title:"Le système nerveux",
+resume:[
+  {title:"Sensibilité consciente",file:"Sensibilité consciente.pdf"},
+  {title:"Motricité volontaire",file:"Motricité volontaire.pdf"},
+  {title:"réflexes médullaires",file:"réflexes méd.pdf"},
+  {title:"Résumé sensibilité consciente",file:"Sensibilité consciente_Résumé.pdf"},
+  {title:"Résumé Motricité volontaire",file:"Motricité volontaire _Résumé.pdf"},
+  {title:"Résumé Réflexes médullaires",file:"Réflexes médullaires_Résumé.pdf"},
+  {title:"Structures nerveuses",file:"Structures nerveuses.pdf"}
+],
+exercises:[
+  {title:"Série 1",file:"série1dexercices de la sensibilite consciente.pdf"},
+  {title:"Série 2",file:"Sérire 2.pdf"},
+  {title:"Série 3",file:"Série  SYST NERV.pdf"}
+],
+Solutions:[
+  {title:"Solution série 1",file:"série1dexercices de la sensibilite consciente_correction.pdf"},
+  {title:"Solution série 2",file:"Sérire 2 - Correction.pdf"},
+  {title:"Solution série 3",file:"Série 3 SYST NERV_correction.pdf"}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"Le système musculaire",
+resume:[
+  {title:"Système musculaire",file:"Système musculaire.pdf"},
+  {title:"Résumé Système musculaire",file:"Système musculaire_Résumé.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Série 4",file:"Sérire 4 Système musculaire.pdf"},
+  {title:"Exercice 2",file:""}
+],
+Solutions:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+} ,
+ {
+title:"Models du controle 1",
+resume:[
+  {title:"Model 1",file:"file1.pdf"},
+  {title:"Model 2",file:"file2.pdf"},
+  {title:"Model 3",file:""},
+  {title:"Model 4",file:""},
+  {title:"Model 5",file:""},
+  {title:"Model 6",file:""}
+],
+
+},
+
+ {
+title:"Les micro-organismes",
+resume:[
+  {title:"Les Microorganismes Modèle 1",file:"les microorganismes VF.pdf"},
+  {title:"Les microorganismes Modèle 2",file:"Les microbes.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+Solutions:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"Le système immunitaire",
+resume:[
+  {title:"cours 1",file:"file1.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+Solutions:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+},
+ {
+title:"Dysfonctionnement du système immunitaire et problèmes d’immunité",
+resume:[
+  {title:"cours 1",file:"file1.pdf"},
+  {title:"cours 2",file:"file2.pdf"},
+  {title:"cours 3",file:""},
+  {title:"cours 4",file:""},
+  {title:"cours 5",file:""},
+  {title:"cours 6",file:""}
+],
+exercises:[
+  {title:"Exercice 1",file:""},
+  {title:"Exercice 2",file:""}
+],
+Solutions:[
+  {title:"Activité 1",file:""},
+  {title:"Activité 2",file:""}
+],
+videos:[
+  {title:"Vidéo 1",src:""},
+  {title:"Vidéo 2",src:""}
+]
+}
+
+// ===== Render =====
+function renderLesson(l){
+return `
+<section class="lesson">
+  <div class="lesson-grid">
+    <h2 class="lesson-title">${l.title}</h2>
+    ${listCard('res',l.resume,l.title,'cours')}
+    ${listCard('exo',l.exercises,l.title,'Exercices')}
+    ${listCard('act',l.Solutions,l.title,'Solutions')}
+    ${videoCard(l.videos,l.title)}
+  </div>
+</section>`
+}
+
+document.getElementById("root").innerHTML = lessons.map(renderLesson).join("")
+</script>
+
+<footer>© 2024 Dades</footer>
+
+</body>
+</html>
