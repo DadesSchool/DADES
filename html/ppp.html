@@ -156,6 +156,31 @@ footer{
   bottom:0;
   width:100%;
 }
+  /* 🔝 تعديل قائمة التنقل */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50px; /* يجعل الزر دائري الأطراف */
+  background: #fff;
+  color: var(--green-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul li a:hover {
+  background: var(--green-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 </style>
 </head>
 
