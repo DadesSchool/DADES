@@ -15,25 +15,20 @@
       gtag('config', 'G-VW9BXMFMBP');
     </script>
 
-    <!-- ===== CSS داخلي ===== -->
     <style>
-        /* Reset CSS */
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-        /* ألوان الموقع */
-:root {
-    --primary-color: #28a745; /* أخضر عصري */
-    --secondary-color: #ffffff; /* أبيض للنص */
-    --accent-color: #f9f9f9; /* خلفية خفيفة */
-    --text-color: #333333; /* نص داكن */
-    --button-color: #28a745;
-    --button-hover: #218838; /* أخضر أغمق عند المرور */
-}
-
+        :root {
+            --primary-color: #28a745;
+            --secondary-color: #ffffff;
+            --accent-color: #f9f9f9;
+            --text-color: #333333;
+            --button-color: #28a745;
+            --button-hover: #218838;
+        }
 
         body { background-color: var(--accent-color); color: var(--text-color); }
 
-        /* Header */
         header {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -59,7 +54,7 @@
             padding: 8px 15px;
             border: none;
             border-radius: 25px;
-            background-color: var(--secondary-color);
+            background-color: white;
             color: var(--primary-color);
             font-weight: 600;
             cursor: pointer;
@@ -68,7 +63,18 @@
 
         .revision-button:hover {
             background-color: var(--button-hover);
-            color: var(--secondary-color);
+            color: white;
+        }
+
+        /* 🔴 زر أحمر فقط لهذين الزرين */
+        .red-btn {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+
+        .red-btn:hover {
+            background-color: #c0392b !important;
+            color: white !important;
         }
 
         nav ul {
@@ -82,12 +88,8 @@
             text-decoration: none;
             color: var(--secondary-color);
             font-weight: 500;
-            transition: 0.3s;
         }
 
-        nav ul li a:hover { text-decoration: underline; }
-
-        /* Intro Section */
         h1 {
             text-align: center;
             margin: 40px 0 15px;
@@ -102,7 +104,6 @@
             line-height: 1.6;
         }
 
-        /* Media Section */
         .media-section {
             display: flex;
             flex-direction: column;
@@ -123,11 +124,10 @@
             border: none;
             border-radius: 30px;
             background-color: var(--button-color);
-            color: var(--secondary-color);
+            color: white;
             font-size: 1em;
             cursor: pointer;
             font-weight: 600;
-            transition: 0.3s;
         }
 
         .media-section .buttons button:hover {
@@ -136,85 +136,79 @@
 
         .video-container { width: 100%; max-width: 720px; }
 
-        .video-container video { width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 25px 20px;
-            text-align: center;
-            font-size: 0.95em;
-            line-height: 1.6;
+        .video-container video {
+            width: 100%;
+            border-radius: 12px;
         }
 
-        footer h4 { margin-bottom: 10px; font-weight: 600; }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
 
-        /* Responsive */
         @media (max-width:768px) {
             header .container { flex-direction: column; gap: 15px; }
             nav ul { flex-direction: column; gap: 10px; }
-            .media-section .buttons { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="D (3) (1).png" alt="Logo Dades Academy">
-                <button class="revision-button" onclick="window.location.href='html/revision.html'">Préparation Examen régional</button>
-                <button class="revision-button" onclick="window.location.href='html/yol.html'">Prépa CC2S2</button>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="html/1ac.html">Cours Collège</a></li>
-                    <li><a href="html/hj.html">Cours Lycée</a></li>
-                    <li><a href="html/ajrada.html">Cours en LIVE</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="D (3) (1).png" alt="Logo">
+            
+            <!-- 🔴 فقط هذو باللون الأحمر -->
+            <button class="revision-button red-btn" onclick="window.location.href='html/revision.html'">
+                Préparation Examen régional
+            </button>
 
-    <!-- Intro Section -->
-    <section>
-        <h1>Bienvenue dans notre site web</h1>
-        <p>Vous pouvez facilement consulter les leçons du Collège et du Lycée selon le programme marocain.</p>
-        <p>Dadesacademy, votre plateforme éducative dédiée à l'enseignement des Sciences de la Vie et de la Terre (SVT).</p>
-    </section>
-
-    <!-- Media Section -->
-    <section class="media-section">
-        <div class="buttons">
-            <button onclick="window.location.href='html/hj.html'">Leçons Lycée</button>
-            <button onclick="window.location.href='html/1ac.html'">Leçons Collège</button>
-            <button onclick="window.location.href='html/ajrada.html'">Cours en LIVE</button>
-            <button onclick="window.location.href='https://xn--oprationnel-cbb.com/'">Notre bibliothèque</button>
+            <button class="revision-button red-btn" onclick="window.location.href='html/yol.html'">
+                Prépa CC2S2
+            </button>
         </div>
 
-        <div class="video-container">
-            <video controls>
-                <source src="videos/scaner-se-cod-qr-1_jmrIlln7.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
-        </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="">Accueil</a></li>
+                <li><a href="html/1ac.html">Cours Collège</a></li>
+                <li><a href="html/hj.html">Cours Lycée</a></li>
+                <li><a href="html/ajrada.html">Cours en LIVE</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés.</h4>
-            <p>FAQ:
-                <br>1/ Qu'est-ce que les SVT (Sciences de la Vie et de la Terre) ?
-                <br>2/ Quels sont les principaux domaines couverts par les SVT ?
-            </p>
-        </div>
-    </footer>
+<section>
+    <h1>Bienvenue dans notre site web</h1>
+    <p>Vous pouvez facilement consulter les leçons du Collège et du Lycée selon le programme marocain.</p>
+    <p>Dadesacademy, votre plateforme éducative SVT.</p>
+</section>
+
+<section class="media-section">
+    <div class="buttons">
+        <button onclick="window.location.href='html/hj.html'">Leçons Lycée</button>
+        <button onclick="window.location.href='html/1ac.html'">Leçons Collège</button>
+        <button onclick="window.location.href='html/ajrada.html'">Cours en LIVE</button>
+        <button onclick="window.location.href='https://xn--oprationnel-cbb.com/'">Notre bibliothèque</button>
+    </div>
+
+    <div class="video-container">
+        <video controls>
+            <source src="videos/scaner-se-cod-qr-1_jmrIlln7.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<footer>
+    <h4>© 2024 Mohamed Dades</h4>
+</footer>
 
 </body>
-</html>
+</html>س
 
 
