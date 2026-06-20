@@ -66,16 +66,16 @@
             color: white;
         }
 
-        /* 🔴 زر أحمر فقط لهذين الزرين */
-.red-btn {
-    background-color: #ffea00 !important; /* أصفر فاقع */
-    color: #000 !important;
-}
+        .red-btn {
+            background-color: #ffea00 !important;
+            color: #000 !important;
+        }
 
-.red-btn:hover {
-    background-color: #ffd600 !important; /* أصفر أقوى عند hover */
-    color: #000 !important;
-}
+        .red-btn:hover {
+            background-color: #ffd600 !important;
+            color: #000 !important;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -133,6 +133,28 @@
             background-color: var(--button-hover);
         }
 
+        /* ===== زر الوسط الأحمر ===== */
+        .center-zoom {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .center-zoom button {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .center-zoom button:hover {
+            background-color: darkred;
+        }
+
         .video-container { width: 100%; max-width: 720px; }
 
         .video-container video {
@@ -160,8 +182,7 @@
     <div class="container">
         <div class="logo">
             <img src="D (3) (1).png" alt="Logo">
-            
-            <!-- 🔴 فقط هذو باللون الأحمر -->
+
             <button class="revision-button red-btn" onclick="window.location.href='html/revision.html'">
                 Préparation Examen régional
             </button>
@@ -188,6 +209,13 @@
     <p>Dadesacademy, votre plateforme éducative SVT.</p>
 </section>
 
+<!-- ===== زر Zoom في الوسط ===== -->
+<div class="center-zoom">
+    <button onclick="window.location.href='https://us06web.zoom.us/j/82683161061?pwd=bfkMbLzq3Pw3Xun9LL1LEUoCuev6Cw.1'">
+        🔴 Rejoindre le cours en direct
+    </button>
+</div>
+
 <section class="media-section">
     <div class="buttons">
         <button onclick="window.location.href='html/hj.html'">Leçons Lycée</button>
@@ -208,6 +236,5 @@
 </footer>
 
 </body>
-</html>س
-
+</html>
 
